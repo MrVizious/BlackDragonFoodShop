@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Generated Sprite
   - 
   - 
   - 
@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 637418145
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Characters
+    uniqueID: 1118902903
+    locked: 0
+  - name: Overlay
+    uniqueID: 1864199245
+    locked: 0
+  - name: UI
+    uniqueID: 1757885909
     locked: 0
