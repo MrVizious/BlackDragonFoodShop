@@ -161,12 +161,12 @@ MonoBehaviour:
       m_Hash: 962340006
       m_Sprite: {fileID: -997445584, guid: 9bf594e20fc865149b6710ba3ca120b7, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -1183307579, guid: 4a0c8cf7527e1154aaca61fc773cec27, type: 3}
+      m_SpriteOverride: {fileID: -997445584, guid: 4a0c8cf7527e1154aaca61fc773cec27, type: 3}
     - m_Name: Walking_Left_3
       m_Hash: 240849968
       m_Sprite: {fileID: 851393632, guid: 9bf594e20fc865149b6710ba3ca120b7, type: 3}
       m_FromMain: 1
-      m_SpriteOverride: {fileID: -623042774, guid: 4a0c8cf7527e1154aaca61fc773cec27, type: 3}
+      m_SpriteOverride: {fileID: 851393632, guid: 4a0c8cf7527e1154aaca61fc773cec27, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 4
   - m_Name: Walking_Right
@@ -222,5 +222,5 @@ MonoBehaviour:
     m_FromMain: 1
     m_EntryOverrideCount: 4
   m_PrimaryLibraryGUID: 4dd273335c0ecbd41b4ffad0bf9f6632
-  m_ModificationHash: 638242862999348911
+  m_ModificationHash: 638242892157753092
   m_Version: 1

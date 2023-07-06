@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 29209cd8493b70e46bee05a92f71e160, type: 2}
+  animator: {fileID: 1157114271}
   lastMovementInput: {x: 0, y: 0}
 --- !u!70 &52688352
 CapsuleCollider2D:
