@@ -75,21 +75,18 @@ public class ConeVisionShaper : MonoBehaviour
         {
             Vector3 point = idealPoints[i];
             Vector3 worldPoint = transform.TransformPoint(point);
-            float worldRadius = transform.TransformVector(transform.right * radius).magnitude;
-            //Debug.DrawLine(worldInitialPoint, worldPoint, Color.cyan);
+            //float worldRadius = transform.TransformVector(transform.right * radius).magnitude;
 
-            RaycastHit2D hit = Physics2D.Raycast(worldInitialPoint, worldPoint - worldInitialPoint, worldRadius, collideWith);
+            RaycastHit2D hit = Physics2D.Raycast(worldInitialPoint, worldPoint - worldInitialPoint, radius, collideWith);
 
             // If it hits something...
             if (hit.collider != null)
             {
                 collisionPoints.Add(transform.InverseTransformPoint(hit.point));
-                Debug.DrawLine(worldInitialPoint, hit.point, Color.red);
             }
             else
             {
                 collisionPoints.Add(point);
-                Debug.DrawLine(worldInitialPoint, worldPoint, Color.cyan);
             }
         }
         _mesh.vertices = collisionPoints.ToArray();
