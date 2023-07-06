@@ -68,7 +68,8 @@ public class PolyColliderToMesh : MonoBehaviour
         _cachedPoints = _collider.GetPath(0);
 
         // Triangulate the loop of points around the collider's perimeter.
-        LoopToTriangles();
+        //LoopToTriangles();
+        ConeToTriangles();
 
         // Populate our mesh with the resulting geometry.
         Vector3[] vertices = new Vector3[_cachedPoints.Length];
@@ -87,6 +88,23 @@ public class PolyColliderToMesh : MonoBehaviour
             _myMesh.vertices = vertices;
             _myMesh.uv = _cachedPoints;
             _myMesh.triangles = _triangles.ToArray();
+        }
+    }
+
+    void ConeToTriangles()
+    {
+        _triangles.Clear();
+
+        List<Vector2> currentPoints = new List<Vector2>(_cachedPoints);
+        List<int> indices = new List<int>(currentPoints.Count);
+        for (int i = 0; i < currentPoints.Count; i++)
+            indices.Add(i);
+
+        for (int i = 0; i < indices.Count - 1; i++)
+        {
+            _triangles.Add(indices[0]);
+            _triangles.Add(indices[i]);
+            _triangles.Add(indices[i + 1]);
         }
     }
 

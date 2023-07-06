@@ -2,47 +2,99 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UtilityMethods;
+using ExtensionMethods;
 using Sirenix.OdinInspector;
 
-[RequireComponent(typeof(PolygonCollider2D))]
 public class ConeVisionShaper : MonoBehaviour
 {
-    [OnValueChanged("SetPoints")]
+    public int index = 0;
     public float radius = 1f, totalAngle = 45f;
     // Number of points between the tow main delimiters
-    [OnValueChanged("SetPoints")]
     public int resolution = 0;
-    private PolygonCollider2D col;
+    public LayerMask collideWith;
+    private MeshFilter filter;
+    private Mesh _mesh;
     private void Awake()
     {
-        col = GetComponent<PolygonCollider2D>();
+        filter = GetComponent<MeshFilter>();
+        _mesh = new Mesh();
+        _mesh.MarkDynamic();
     }
 
-    void Start()
+    void Update()
     {
         SetPoints();
     }
 
     private void SetPoints()
     {
-        col.points = GeneratePoints();
+
+
+        filter.mesh = GenerateCollisionPoints(GenerateIdealPoints());
+        //GenerateIdealPoints();
+        //filter.mesh = _mesh;
     }
 
-    private Vector2[] GeneratePoints()
+    private Vector3[] GenerateIdealPoints()
     {
-        List<Vector2> pointsToReturn = new List<Vector2>();
+        List<Vector3> idealPoints = new List<Vector3>();
         // Add p0
-        pointsToReturn.Add(Vector2.zero);
+        idealPoints.Add(Vector3.zero);
         float initialAngle = -90f - totalAngle / 2f;
         // Add p1
-        pointsToReturn.Add(Math.PolarToCartesianClockwise(radius, initialAngle));
+        idealPoints.Add(Math.PolarToCartesianClockwise(radius, initialAngle));
 
         float angleBetweenInnerPoints = totalAngle / (1 + resolution);
         for (int i = 0; i < resolution; i++)
         {
-            pointsToReturn.Add(Math.PolarToCartesianClockwise(radius, initialAngle + (i + 1) * angleBetweenInnerPoints));
+            idealPoints.Add((Vector3)Math.PolarToCartesianClockwise(radius, initialAngle + (i + 1) * angleBetweenInnerPoints));
         }
-        pointsToReturn.Add(Math.PolarToCartesianClockwise(radius, totalAngle / 2f - 90f));
-        return pointsToReturn.ToArray();
+        // Add pN
+        idealPoints.Add((Vector3)Math.PolarToCartesianClockwise(radius, initialAngle + totalAngle));
+        _mesh.vertices = idealPoints.ToArray();
+
+        List<int> triangles = new List<int>();
+        for (int i = 1; i < idealPoints.Count - 1; i++)
+        {
+            triangles.Add(0);
+            triangles.Add(i);
+            triangles.Add(i + 1);
+        }
+
+        _mesh.triangles = triangles.ToArray();
+        return idealPoints.ToArray();
+    }
+
+    private Mesh GenerateCollisionPoints(Vector3[] idealPoints)
+    {
+        List<Vector3> collisionPoints = new List<Vector3>();
+        collisionPoints.Add(idealPoints[0]);
+        Vector3 worldInitialPoint = transform.TransformPoint(idealPoints[0]);
+
+        for (int i = 1; i < idealPoints.Length; i++)
+        {
+            Vector3 point = idealPoints[i];
+            Vector3 worldPoint = transform.TransformPoint(point);
+            float worldRadius = transform.TransformVector(transform.right * radius).magnitude;
+            //Debug.DrawLine(worldInitialPoint, worldPoint, Color.cyan);
+
+            RaycastHit2D hit = Physics2D.Raycast(worldInitialPoint, worldPoint - worldInitialPoint, worldRadius, collideWith);
+
+            // If it hits something...
+            if (hit.collider != null)
+            {
+                collisionPoints.Add(transform.InverseTransformPoint(hit.point));
+                Debug.DrawLine(worldInitialPoint, hit.point, Color.red);
+            }
+            else
+            {
+                collisionPoints.Add(point);
+                Debug.DrawLine(worldInitialPoint, worldPoint, Color.cyan);
+            }
+        }
+        _mesh.vertices = collisionPoints.ToArray();
+
+
+        return _mesh;
     }
 }
