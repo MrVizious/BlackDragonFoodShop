@@ -10,6 +10,7 @@ public class PlayerController : StateMachine<PlayerState>
 {
 
     public PlayerData playerData;
+    public Animator animator;
     [HideInInspector] public Rigidbody2D rb { get; private set; }
     [HideInInspector] public Vector2 lastMovementInput = Vector2.zero;
 
@@ -41,6 +42,27 @@ public class PlayerController : StateMachine<PlayerState>
     public void Movement(InputAction.CallbackContext c)
     {
         lastMovementInput = c.ReadValue<Vector2>();
+        if (lastMovementInput.magnitude > 0f)
+        {
+            animator.SetBool("Walking", true);
+            if (Mathf.Abs(lastMovementInput.x) >= Mathf.Abs(lastMovementInput.y))
+            {
+                if (lastMovementInput.x > 0) animator.SetInteger("Direction", 3);
+                else animator.SetInteger("Direction", 2);
+            }
+            else
+            {
+                if (lastMovementInput.y > 0) animator.SetInteger("Direction", 0);
+                else animator.SetInteger("Direction", 1);
+            }
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
+        }
+
+
+
         currentState.Move(c);
     }
 
