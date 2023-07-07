@@ -19,6 +19,11 @@ public class IdleState : PlayerState
         }
     }
 
+    private void Update()
+    {
+
+        playerController.rb.velocity = Vector2.zero;
+    }
     public override void Move(InputAction.CallbackContext c)
     {
         base.Move(c);
