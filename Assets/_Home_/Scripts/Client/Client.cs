@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using DesignPatterns;
 using UnityEngine;
 
-public class Client : MonoBehaviour
+public class Client : StateMachine<ClientState>
 {
     public bool isSeen = false;
 
@@ -15,6 +16,7 @@ public class Client : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (isSeen) return;
         if (other.tag.ToLower().Equals("unmask"))
         {
             isSeen = true;
