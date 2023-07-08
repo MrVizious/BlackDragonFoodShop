@@ -3368,7 +3368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  radius: 7
+  radius: 5
   totalAngle: 360
   resolution: 400
   collideWith:
