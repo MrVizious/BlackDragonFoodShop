@@ -14,9 +14,11 @@ public class ConeVisionShaper : MonoBehaviour
     public LayerMask collideWith;
     private MeshFilter filter;
     private Mesh _mesh;
+    private PolygonCollider2D col;
     private void Awake()
     {
         filter = GetComponent<MeshFilter>();
+        col = GetComponent<PolygonCollider2D>();
         _mesh = new Mesh();
         _mesh.MarkDynamic();
     }
@@ -31,6 +33,7 @@ public class ConeVisionShaper : MonoBehaviour
 
 
         filter.mesh = GenerateCollisionPoints(GenerateIdealPoints());
+        col.points = filter.mesh.vertices.toVector2Array();
         //GenerateIdealPoints();
         //filter.mesh = _mesh;
     }
