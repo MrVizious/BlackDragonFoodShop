@@ -38,20 +38,4 @@ public class WalkEvent : QueueableEvent
         return seeker.reachedDestination;
     }
 
-    public override void End()
-    {
-        ChooseWalkingDestination();
-        base.End();
-    }
-
-    public void ChooseWalkingDestination()
-    {
-        List<PointOfInterest> pointsOfInterest = new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
-        PointOfInterest chosenPointOfInterest = pointsOfInterest[Random.Range(0, pointsOfInterest.Count)];
-
-        WalkEvent walkEvent = gameObject.AddComponent<WalkEvent>();
-        walkEvent.destinationSetter.target = chosenPointOfInterest.transform;
-        queue.AddEvent(walkEvent);
-    }
-
 }

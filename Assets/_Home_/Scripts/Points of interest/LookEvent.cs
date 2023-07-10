@@ -10,6 +10,7 @@ public class LookEvent : QueueableEvent
     {
         base.Setup(newQueue);
         secondsToLook = Random.Range(2f, 5f);
+        Debug.Log(secondsToLook);
     }
     public override void Execute()
     {
@@ -21,6 +22,27 @@ public class LookEvent : QueueableEvent
     {
         yield return new WaitForSeconds(seconds);
         End();
+    }
+
+    public override void End()
+    {
+        ChooseWalkingDestination();
+        base.End();
+    }
+
+    public void ChooseWalkingDestination()
+    {
+        List<PointOfInterest> pointsOfInterest = new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
+        PointOfInterest chosenPointOfInterest = pointsOfInterest[Random.Range(0, pointsOfInterest.Count)];
+
+        WalkEvent walkEvent = gameObject.AddComponent<WalkEvent>();
+        walkEvent.destinationSetter.target = chosenPointOfInterest.transform;
+        queue.AddEvent(walkEvent);
+        queue.ExecuteNextEvent();
+
+        LookEvent lookEvent = gameObject.AddComponent<LookEvent>();
+        queue.AddEvent(lookEvent);
+        queue.ExecuteNextEvent();
     }
 
 

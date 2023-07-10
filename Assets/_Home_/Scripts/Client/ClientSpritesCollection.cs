@@ -13,4 +13,9 @@ public class ClientSpritesCollection : ScriptableObject
     {
         return libraries[(++currentIndex) % libraries.Count];
     }
+
+    public SpriteLibraryAsset getRandom()
+    {
+        return libraries[Random.Range(0, libraries.Count)];
+    }
 }
