@@ -6,7 +6,8 @@ using Sirenix.OdinInspector;
 public class SecurityCamera : MonoBehaviour
 {
     [OnValueChanged("UpdateWorking")]
-    public bool isWorking = true;
+    [SerializeField]
+    private bool isWorking = true;
 
 
     private MeshRenderer _meshRenderer;
@@ -31,6 +32,7 @@ public class SecurityCamera : MonoBehaviour
     public void SetWorking(bool newValue)
     {
         isWorking = newValue;
-        meshRenderer.enabled = isWorking;
+        meshRenderer.gameObject.SetActive(isWorking);
+        Debug.Log("Camera set to " + (isWorking ? "working" : "not working"));
     }
 }

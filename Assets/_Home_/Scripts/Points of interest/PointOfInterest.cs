@@ -2,20 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DesignPatterns;
+using TypeReferences;
 
 public class PointOfInterest : MonoBehaviour
 {
-    public int lookProbability, stealProbability, breakProbability, buyProbability;
-    private int totalProbability
+    public PointOfInterestPossibleEventsData possibleEventsData;
+    public TypeReference GetEvent(bool isThief = false)
     {
-        get
-        {
-            return lookProbability + stealProbability + breakProbability + buyProbability;
-        }
-    }
-    public void AddActionToQueue(EventQueue queue, bool isThief)
-    {
-
+        return possibleEventsData.GetEvent(isThief);
     }
 
 }

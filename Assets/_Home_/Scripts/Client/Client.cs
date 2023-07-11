@@ -43,7 +43,8 @@ public class Client : StateMachine<ClientState>
     private void Start()
     {
         ChangeAppearance();
-        ChooseWalkingDestination();
+        ChooseNextEvent();
+        //eventQueue.onQueueEmpty.AddListener(ChooseNextEvent);
     }
 
     private void Update()
@@ -76,18 +77,33 @@ public class Client : StateMachine<ClientState>
     }
 
     [Button]
-    public void ChooseWalkingDestination()
+    public void ChooseNextEvent()
     {
         List<PointOfInterest> pointsOfInterest = new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
-        PointOfInterest chosenPointOfInterest = pointsOfInterest[Random.Range(0, pointsOfInterest.Count)];
 
+        PointOfInterest chosenPointOfInterest = null;
+        int tries = 0;
+        while (chosenPointOfInterest == null && tries < 20)
+        {
+            chosenPointOfInterest = pointsOfInterest[Random.Range(0, pointsOfInterest.Count)];
+            tries++;
+        };
+        // If depth is surpassed, stop
+        if (tries >= 20) return;
+
+
+        // Add walk to interest point event
         WalkEvent walkEvent = gameObject.AddComponent<WalkEvent>();
-        walkEvent.destinationSetter.target = chosenPointOfInterest.transform;
+        walkEvent.client = this;
+        walkEvent.pointOfInterest = chosenPointOfInterest;
         eventQueue.AddEvent(walkEvent);
-        eventQueue.ExecuteNextEvent();
 
-        LookEvent lookEvent = gameObject.AddComponent<LookEvent>();
-        eventQueue.AddEvent(lookEvent);
+        // Add event
+        ClientEvent mainEvent = (ClientEvent)gameObject.AddComponent(chosenPointOfInterest.GetEvent(isThief));
+        mainEvent.client = this;
+        mainEvent.pointOfInterest = chosenPointOfInterest;
+        eventQueue.AddEvent(mainEvent);
+
         eventQueue.ExecuteNextEvent();
     }
     private void OnTriggerEnter2D(Collider2D other)

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using DesignPatterns;
 using Pathfinding;
+using Cysharp.Threading.Tasks;
 
-public class WalkEvent : QueueableEvent
+public class WalkEvent : ClientEvent
 {
-    private AIPath seeker;
+    private AIPath aiPath;
     private AIDestinationSetter _destinationSetter;
     public AIDestinationSetter destinationSetter
     {
@@ -19,23 +20,21 @@ public class WalkEvent : QueueableEvent
     public override void Setup(EventQueue newQueue)
     {
         base.Setup(newQueue);
-        seeker = GetComponent<AIPath>();
+        aiPath = GetComponent<AIPath>();
     }
-    public override void Execute()
+    public override async UniTask Execute()
     {
-        base.Execute();
-        StartCoroutine(WaitUntilArrived());
-    }
-
-    private IEnumerator WaitUntilArrived()
-    {
-        yield return new WaitUntil(HasArrivedToDestination);
+        await base.Execute();
+        destinationSetter.target = pointOfInterest.transform;
+        await UniTask.Delay(200);
+        await UniTask.WaitUntil(HasArrivedToDestination);
         End();
     }
 
     private bool HasArrivedToDestination()
     {
-        return seeker.reachedDestination;
+        bool hasArrived = aiPath.reachedDestination;
+        return hasArrived;
     }
 
 }
