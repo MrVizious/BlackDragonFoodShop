@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Unmask
+  - Client
   layers:
   - Default
   - TransparentFX
@@ -11,7 +13,7 @@ TagManager:
   - Obstacle
   - Water
   - UI
-  - Generated Sprite
+  - Unmask
   - 
   - 
   - 
@@ -49,6 +51,9 @@ TagManager:
     locked: 0
   - name: Overlay
     uniqueID: 1864199245
+    locked: 0
+  - name: Points of Interest
+    uniqueID: 3344255621
     locked: 0
   - name: UI
     uniqueID: 1757885909
