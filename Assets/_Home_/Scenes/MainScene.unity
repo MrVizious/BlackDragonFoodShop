@@ -329,6 +329,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 79371137}
   m_CullTransparentMesh: 1
+--- !u!1 &84783402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 84783404}
+  - component: {fileID: 84783403}
+  m_Layer: 0
+  m_Name: POI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &84783403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84783402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a716c47f507044fa47d7e8eed20bda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allPointsOfInterest: []
+  activePointsOfInterest: {fileID: 11400000, guid: 7323b1226ae78684e99c34372ae67af6, type: 2}
+--- !u!4 &84783404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84783402}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &114904159
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,6 +527,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53926b4a007199846ad01c59945d0cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
   possibleEventsData: {fileID: 0}
 --- !u!1 &383414768
 GameObject:
@@ -951,6 +1003,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53926b4a007199846ad01c59945d0cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
   possibleEventsData: {fileID: 0}
 --- !u!1 &487507172
 GameObject:
@@ -1620,6 +1678,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53926b4a007199846ad01c59945d0cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
   possibleEventsData: {fileID: 0}
 --- !u!1 &682368057
 GameObject:
@@ -3256,6 +3320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53926b4a007199846ad01c59945d0cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
   possibleEventsData: {fileID: 11400000, guid: cdae6d081cb7bab48a4164ea594e3beb, type: 2}
 --- !u!1 &1531851253
 GameObject:
@@ -4007,6 +4077,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53926b4a007199846ad01c59945d0cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
   possibleEventsData: {fileID: 11400000, guid: cdae6d081cb7bab48a4164ea594e3beb, type: 2}
 --- !u!1 &1920920198
 GameObject:
@@ -4559,6 +4635,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53926b4a007199846ad01c59945d0cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onDisable:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnable:
+    m_PersistentCalls:
+      m_Calls: []
   possibleEventsData: {fileID: 0}
 --- !u!1001 &1341748451887215729
 PrefabInstance:
@@ -4632,6 +4714,10 @@ PrefabInstance:
       propertyPath: isThief
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7915682108798263250, guid: 49c1a8162f30d52469e6f5bdb100579d, type: 3}
+      propertyPath: activePointsOfInterest
+      value: 
+      objectReference: {fileID: 11400000, guid: 7323b1226ae78684e99c34372ae67af6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
