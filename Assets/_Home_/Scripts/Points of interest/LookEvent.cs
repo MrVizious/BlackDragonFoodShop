@@ -9,7 +9,7 @@ public class LookEvent : ClientEvent
     public override async UniTask Execute()
     {
         await base.Execute();
-        await UniTask.Delay((int)durationInSeconds * 1000);
+        await UniTask.Delay((int)durationInSeconds * 1000).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
         End();
     }
 }

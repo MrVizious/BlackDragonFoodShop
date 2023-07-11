@@ -33,6 +33,5 @@ public class SecurityCamera : MonoBehaviour
     {
         isWorking = newValue;
         meshRenderer.gameObject.SetActive(isWorking);
-        Debug.Log("Camera set to " + (isWorking ? "working" : "not working"));
     }
 }

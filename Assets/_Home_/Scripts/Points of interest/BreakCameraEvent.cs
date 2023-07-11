@@ -7,18 +7,13 @@ using Cysharp.Threading.Tasks;
 
 public class BreakCameraEvent : ClientEvent
 {
-    public override void Setup(EventQueue newQueue)
-    {
-        base.Setup(newQueue);
-    }
-
     public override async UniTask Execute()
     {
         await base.Execute();
-        await UniTask.Delay((int)durationInSeconds * 1000 / 2);
+        await UniTask.Delay((int)durationInSeconds * 1000 / 2).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
         pointOfInterest.GetComponent<SecurityCamera>().SetWorking(false);
-        await UniTask.Delay((int)durationInSeconds * 1000 / 2);
+        pointOfInterest.isActive = false;
+        await UniTask.Delay((int)durationInSeconds * 1000 / 2).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
         End();
     }
-
 }

@@ -6,12 +6,15 @@ using Sirenix.OdinInspector;
 using ExtensionMethods;
 using UnityEngine.U2D.Animation;
 using Pathfinding;
+using RuntimeSet;
 
 public class Client : StateMachine<ClientState>
 {
     public bool isSeen = false;
     public bool isThief = false;
     public ClientSpritesCollection spritesCollection;
+    public RuntimeSetPointOfInterest activePointsOfInterest;
+
     private AIPath _seeker;
     private AIPath seeker
     {
@@ -21,6 +24,7 @@ public class Client : StateMachine<ClientState>
             return _seeker;
         }
     }
+
     private Animator _animator;
     private Animator animator
     {
@@ -30,6 +34,7 @@ public class Client : StateMachine<ClientState>
             return _animator;
         }
     }
+
     private EventQueue _eventQueue;
     public EventQueue eventQueue
     {
@@ -40,11 +45,13 @@ public class Client : StateMachine<ClientState>
             return _eventQueue;
         }
     }
+
     private void Start()
     {
         ChangeAppearance();
         ChooseNextEvent();
-        //eventQueue.onQueueEmpty.AddListener(ChooseNextEvent);
+        eventQueue.onQueueEmpty.AddListener(ChooseNextEvent);
+        eventQueue.ExecuteNextEvent();
     }
 
     private void Update()
@@ -79,18 +86,8 @@ public class Client : StateMachine<ClientState>
     [Button]
     public void ChooseNextEvent()
     {
-        List<PointOfInterest> pointsOfInterest = new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
-
-        PointOfInterest chosenPointOfInterest = null;
-        int tries = 0;
-        while (chosenPointOfInterest == null && tries < 20)
-        {
-            chosenPointOfInterest = pointsOfInterest[Random.Range(0, pointsOfInterest.Count)];
-            tries++;
-        };
-        // If depth is surpassed, stop
-        if (tries >= 20) return;
-
+        if (activePointsOfInterest.Items.Count <= 0) return;
+        PointOfInterest chosenPointOfInterest = activePointsOfInterest.GetRandom();
 
         // Add walk to interest point event
         WalkEvent walkEvent = gameObject.AddComponent<WalkEvent>();
@@ -104,8 +101,8 @@ public class Client : StateMachine<ClientState>
         mainEvent.pointOfInterest = chosenPointOfInterest;
         eventQueue.AddEvent(mainEvent);
 
-        eventQueue.ExecuteNextEvent();
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.ToLower().Equals("unmask"))
@@ -113,6 +110,7 @@ public class Client : StateMachine<ClientState>
             isSeen = true;
         }
     }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if (isSeen) return;
@@ -121,6 +119,7 @@ public class Client : StateMachine<ClientState>
             isSeen = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag.ToLower().Equals("unmask"))
@@ -128,6 +127,7 @@ public class Client : StateMachine<ClientState>
             isSeen = false;
         }
     }
+
     [Button]
     public void ChangeAppearance()
     {

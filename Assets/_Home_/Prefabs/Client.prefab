@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2380134303284807023}
   - component: {fileID: 6398982270173603904}
   - component: {fileID: 7915682108798263250}
+  - component: {fileID: 1818390047001698720}
   m_Layer: 0
   m_Name: Client
   m_TagString: Untagged
@@ -199,6 +200,23 @@ MonoBehaviour:
   isSeen: 0
   isThief: 0
   spritesCollection: {fileID: 11400000, guid: ba49f1273c302934ea5e2bfc14c663f2, type: 2}
+--- !u!114 &1818390047001698720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421049109293118546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fcbeaa58dd86bd4cb17a4a63c6f74ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onQueueEmpty:
+    m_PersistentCalls:
+      m_Calls: []
+  currentEvent: {fileID: 0}
+  nextEvents: []
 --- !u!1 &1550486394312081881
 GameObject:
   m_ObjectHideFlags: 0
