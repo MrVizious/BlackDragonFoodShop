@@ -9,8 +9,9 @@ public class PointsOfInterestManager : MonoBehaviour
     public List<PointOfInterest> allPointsOfInterest = new List<PointOfInterest>();
     public RuntimeSetPointOfInterest activePointsOfInterest;
 
-    private void Start()
+    private void Awake()
     {
+        activePointsOfInterest.Items.Clear();
         if (activePointsOfInterest == null) return;
         allPointsOfInterest = new List<PointOfInterest>(FindObjectsOfType<PointOfInterest>());
         for (int i = 0; i < allPointsOfInterest.Count; i++)
