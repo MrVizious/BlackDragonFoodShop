@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public class SecurityCamera : MonoBehaviour
+public class SecurityCamera : PointOfInterest
 {
     [OnValueChanged("UpdateWorking")]
     [SerializeField]

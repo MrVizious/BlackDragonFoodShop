@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using DesignPatterns;
 using TypeReferences;
 
-public class PointOfInterest : MonoBehaviour
+public abstract class PointOfInterest : MonoBehaviour
 {
     private bool _isActive = true;
     public bool isActive

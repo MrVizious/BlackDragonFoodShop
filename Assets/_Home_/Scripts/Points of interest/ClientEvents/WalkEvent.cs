@@ -34,6 +34,7 @@ public class WalkEvent : ClientEvent
     private bool HasArrivedToDestination()
     {
         bool hasArrived = aiPath.reachedDestination;
+        Debug.Log("Has arrived: " + hasArrived);
         return hasArrived;
     }
 

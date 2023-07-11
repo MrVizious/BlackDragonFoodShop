@@ -45,6 +45,7 @@ public class Client : StateMachine<ClientState>
             return _eventQueue;
         }
     }
+    private PointOfInterest chosenPointOfInterest;
 
     private void Start()
     {
@@ -87,7 +88,7 @@ public class Client : StateMachine<ClientState>
     public void ChooseNextEvent()
     {
         if (activePointsOfInterest.Items.Count <= 0) return;
-        PointOfInterest chosenPointOfInterest = activePointsOfInterest.GetRandom();
+        chosenPointOfInterest = activePointsOfInterest.GetRandomExluding(chosenPointOfInterest);
 
         // Add walk to interest point event
         WalkEvent walkEvent = gameObject.AddComponent<WalkEvent>();

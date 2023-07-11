@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 015b851ec03f66748873c7b7b7f7c42a, type: 3}
-  m_Name: SecurityCameraEvents
+  m_Name: ItemShelfEvents
   m_EditorClassIdentifier: 
   clientEvents:
   - eventType:
@@ -18,11 +18,17 @@ MonoBehaviour:
       GUID: 00c6104f5ae96314e93b632aff275402
       _typeNameAndAssembly: LookEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 50
+    probability: 10
+  - eventType:
+      GuidAssignmentFailed: 0
+      GUID: 244385aa68a155b4b8cb4b059bd79bb7
+      _typeNameAndAssembly: GrabItemEvent, Assembly-CSharp
+      _suppressLogs: 0
+    probability: 90
   thiefEvents:
   - eventType:
       GuidAssignmentFailed: 0
-      GUID: 40d06a244068029408dffa304319aabb
-      _typeNameAndAssembly: BreakCameraEvent, Assembly-CSharp
+      GUID: 00c6104f5ae96314e93b632aff275402
+      _typeNameAndAssembly: LookEvent, Assembly-CSharp
       _suppressLogs: 0
     probability: 50
