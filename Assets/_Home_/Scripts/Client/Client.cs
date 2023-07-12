@@ -89,7 +89,7 @@ public class Client : StateMachine<ClientState>
     {
         if (DoesGoToCashier())
         {
-            Debug.Log("Goes to cashier");
+            GoToCashier();
             return;
         }
         if (activePointsOfInterest.Items.Count <= 0) return;
@@ -142,6 +142,10 @@ public class Client : StateMachine<ClientState>
         return false;
     }
 
+    private void GoToCashier()
+    {
+        GetComponent<AIDestinationSetter>().target = FindObjectOfType<Cashier>().GetFreeSpot(this);
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.ToLower().Equals("unmask"))
