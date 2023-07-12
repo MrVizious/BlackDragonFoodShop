@@ -27,16 +27,25 @@ public class Cashier : MonoBehaviour
     [Button]
     public void RingUp()
     {
+        Client client = spots[0].client;
         // There is no client to ring up
-        if (spots[0].client == null) return;
+        if (client == null)
+        {
+            Debug.Log("No client to ring up");
+            return;
+        }
 
         //The client is too far away
-        if (Vector2.Distance(spots[0].client.transform.position, spots[0].transform.position) > 0.5f) return;
+        if (Vector2.Distance(client.transform.position, transform.position) > 1f) return;
 
         // Ring up
         // TODO: Add points for each sold item
-        // TODO: Don't actually kill the client
-        Destroy(spots[0].client.gameObject);
+        // Add walk to interest point event
+        LeaveEvent leaveEvent = client.gameObject.AddComponent<LeaveEvent>();
+        leaveEvent.client = client;
+        client.eventQueue.AddEvent(leaveEvent);
+        client.eventQueue.ExecuteNextEvent();
+
 
         // Move each client to the next spot
         for (int i = 0; i < spots.Count - 1; i++)

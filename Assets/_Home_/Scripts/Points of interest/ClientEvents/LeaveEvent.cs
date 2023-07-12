@@ -5,9 +5,8 @@ using DesignPatterns;
 using Pathfinding;
 using Cysharp.Threading.Tasks;
 
-public class WalkEvent : ClientEvent
+public class LeaveEvent : ClientEvent
 {
-    public Transform target;
     private AIPath aiPath;
     private AIDestinationSetter _destinationSetter;
     public AIDestinationSetter destinationSetter
@@ -26,16 +25,13 @@ public class WalkEvent : ClientEvent
     public override async UniTask Execute()
     {
         await base.Execute();
-        if (target == null)
-        {
-            destinationSetter.target = pointOfInterest.transform;
-        }
-        else
-        {
-            destinationSetter.target = target;
-        }
+        Transform newTarget = GameObject.Find("Exit").transform;
+        Debug.Log("New Target is: " + newTarget);
+        Debug.Log("AI Destination setter: " + destinationSetter);
+        destinationSetter.target = newTarget;
         await UniTask.Delay(200);
         await UniTask.WaitUntil(HasArrivedToDestination);
+        await UniTask.Delay(500);
         End();
     }
 
@@ -43,6 +39,12 @@ public class WalkEvent : ClientEvent
     {
         bool hasArrived = aiPath.reachedDestination;
         return hasArrived;
+    }
+
+    public override void End()
+    {
+        Destroy(client.gameObject);
+        base.End();
     }
 
 }
