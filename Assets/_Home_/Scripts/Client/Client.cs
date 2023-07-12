@@ -117,7 +117,6 @@ public class Client : StateMachine<ClientState>
         if (currentNumberOfItems <= 0) return false;
 
         int randomNumber = Random.Range(0, 101);
-        Debug.Log(randomNumber);
 
         if (currentNumberOfItems == 1)
         {
