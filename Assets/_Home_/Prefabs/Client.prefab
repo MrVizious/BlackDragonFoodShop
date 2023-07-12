@@ -200,7 +200,8 @@ MonoBehaviour:
   isSeen: 0
   isThief: 0
   spritesCollection: {fileID: 11400000, guid: ba49f1273c302934ea5e2bfc14c663f2, type: 2}
-  activePointsOfInterest: {fileID: 0}
+  activePointsOfInterest: {fileID: 11400000, guid: 7323b1226ae78684e99c34372ae67af6, type: 2}
+  currentNumberOfItems: 0
 --- !u!114 &1818390047001698720
 MonoBehaviour:
   m_ObjectHideFlags: 0

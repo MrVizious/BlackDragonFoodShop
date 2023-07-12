@@ -18,6 +18,7 @@ public class GrabItemEvent : ClientEvent
         if ((itemShelf).currentItemCount > 0)
         {
             itemShelf.currentItemCount--;
+            client.currentNumberOfItems++;
             Debug.Log("Item taken!");
         }
         else

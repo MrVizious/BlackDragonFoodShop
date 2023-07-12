@@ -29,6 +29,7 @@ public class SecurityCamera : PointOfInterest
     {
         SetWorking(isWorking);
     }
+    [Button]
     public void SetWorking(bool newValue)
     {
         isWorking = newValue;

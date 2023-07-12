@@ -7,6 +7,7 @@ using Sirenix.OdinInspector;
 
 public class ConeVisionShaper : MonoBehaviour
 {
+    public bool updates = false;
     public int index = 0;
     public float radius = 1f, totalAngle = 45f;
     // Number of points between the tow main delimiters
@@ -23,15 +24,19 @@ public class ConeVisionShaper : MonoBehaviour
         _mesh.MarkDynamic();
     }
 
-    void Update()
+    void Start()
     {
         SetPoints();
     }
 
+    private void Update()
+    {
+        if (updates)
+            SetPoints();
+    }
+
     private void SetPoints()
     {
-
-
         filter.mesh = GenerateCollisionPoints(GenerateIdealPoints());
         col.points = filter.mesh.vertices.toVector2Array();
         //GenerateIdealPoints();

@@ -14,6 +14,7 @@ public class Client : StateMachine<ClientState>
     public bool isThief = false;
     public ClientSpritesCollection spritesCollection;
     public RuntimeSetPointOfInterest activePointsOfInterest;
+    public int currentNumberOfItems = 0;
 
     private AIPath _seeker;
     private AIPath seeker
@@ -62,7 +63,6 @@ public class Client : StateMachine<ClientState>
 
     private void UpdateAnimation()
     {
-
         Vector3 desiredVelocity = seeker.desiredVelocity;
         if (desiredVelocity.magnitude > 0f)
         {
@@ -87,6 +87,11 @@ public class Client : StateMachine<ClientState>
     [Button]
     public void ChooseNextEvent()
     {
+        if (DoesGoToCashier())
+        {
+            Debug.Log("Goes to cashier");
+            return;
+        }
         if (activePointsOfInterest.Items.Count <= 0) return;
         chosenPointOfInterest = activePointsOfInterest.GetRandomExluding(chosenPointOfInterest);
 
@@ -101,7 +106,41 @@ public class Client : StateMachine<ClientState>
         mainEvent.client = this;
         mainEvent.pointOfInterest = chosenPointOfInterest;
         eventQueue.AddEvent(mainEvent);
+    }
 
+    /// <summary>
+    /// Calculate whether the client goes to pay for the items or not
+    /// </summary>
+    /// <returns></returns>
+    private bool DoesGoToCashier()
+    {
+        if (currentNumberOfItems <= 0) return false;
+
+        int randomNumber = Random.Range(0, 101);
+        Debug.Log(randomNumber);
+
+        if (currentNumberOfItems == 1)
+        {
+            if (randomNumber <= 50) return true;
+        }
+        else if (currentNumberOfItems == 2)
+        {
+            if (randomNumber <= 75) return true;
+        }
+        else if (currentNumberOfItems == 3)
+        {
+            if (randomNumber <= 90) return true;
+        }
+        else if (currentNumberOfItems == 4)
+        {
+            if (randomNumber <= 99) return true;
+        }
+        else
+        {
+            return true;
+        }
+
+        return false;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

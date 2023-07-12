@@ -32,7 +32,7 @@ public class ItemShelf : PointOfInterest
     {
         get
         {
-            if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+            if (_spriteRenderer == null) _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
             return _spriteRenderer;
         }
     }
