@@ -8,6 +8,8 @@ using Sirenix.OdinInspector;
 public class Cashier : MonoBehaviour
 {
     public List<Spot> spots = new List<Spot>();
+    [SerializeField]
+    private bool isManned = false;
 
     public Transform GetFreeSpot(Client client)
     {
@@ -27,6 +29,7 @@ public class Cashier : MonoBehaviour
     [Button]
     public void RingUp()
     {
+        if (!isManned) return;
         Client client = spots[0].client;
         // There is no client to ring up
         if (client == null)
@@ -66,6 +69,28 @@ public class Cashier : MonoBehaviour
         {
             if (currentSpot.client == null) break;
             currentSpot.client.GetComponent<AIDestinationSetter>().target = currentSpot.transform;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.ToLower().Equals("player"))
+        {
+            isManned = true;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag.ToLower().Equals("player"))
+        {
+            isManned = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag.ToLower().Equals("player"))
+        {
+            isManned = false;
         }
     }
 }
