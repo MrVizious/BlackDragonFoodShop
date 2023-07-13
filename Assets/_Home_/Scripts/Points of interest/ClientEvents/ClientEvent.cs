@@ -14,5 +14,17 @@ public abstract class ClientEvent : QueueableEvent
     {
         base.Setup(newQueue);
         durationInSeconds = Random.Range(2f, 5f);
+        if (pointOfInterest != null) pointOfInterest.isActive = false;
+    }
+
+    public override void End()
+    {
+        if (pointOfInterest != null) pointOfInterest.isActive = true;
+        base.End();
+    }
+    public override void Cancel()
+    {
+        if (pointOfInterest != null) pointOfInterest.isActive = true;
+        base.Cancel();
     }
 }

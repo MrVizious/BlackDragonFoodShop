@@ -4,6 +4,7 @@ using UnityEngine;
 using DesignPatterns;
 using Pathfinding;
 using Cysharp.Threading.Tasks;
+using UtilityMethods;
 
 public class LeaveEvent : ClientEvent
 {
@@ -45,7 +46,7 @@ public class LeaveEvent : ClientEvent
         {
             LevelManager.Instance.stolenItems += client.currentNumberOfItems;
         }
-        LevelManager.Instance.SpawnClient();
+        UtilityMethods.UniTaskMethods.DelayedFunction(() => LevelManager.Instance.SpawnClient(), 1f).Forget();
         Destroy(client.gameObject);
         base.End();
     }

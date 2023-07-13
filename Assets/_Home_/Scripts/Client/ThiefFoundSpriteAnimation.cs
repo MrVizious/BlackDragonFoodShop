@@ -26,4 +26,9 @@ public class ThiefFoundSpriteAnimation : MonoBehaviour
     {
         spriteRenderer.color = Color.Lerp(initialColor, targetColor, Mathf.Sin(Time.time * blinkingSpeed));
     }
+    private void OnDestroy()
+    {
+
+        spriteRenderer.color = initialColor;
+    }
 }

@@ -7,6 +7,8 @@ using ExtensionMethods;
 using UnityEngine.U2D.Animation;
 using Pathfinding;
 using RuntimeSet;
+using UnityEngine.InputSystem;
+using Cysharp.Threading.Tasks;
 
 public class Client : StateMachine<ClientState>
 {
@@ -32,8 +34,20 @@ public class Client : StateMachine<ClientState>
     public ClientSpritesCollection spritesCollection;
     public RuntimeSetPointOfInterest activePointsOfInterest;
     public int currentNumberOfItems = 0;
+    public EventQueue eventQueue
+    {
+        get
+        {
+            if (_eventQueue == null)
+                _eventQueue = gameObject.GetOrAddComponent<EventQueue>();
+            return _eventQueue;
+        }
+    }
+
 
     private bool _seenStealing = false;
+    private PointOfInterest chosenPointOfInterest;
+    private bool isTouchingPlayer = false;
     private AIPath _seeker;
     private AIPath seeker
     {
@@ -55,16 +69,15 @@ public class Client : StateMachine<ClientState>
     }
 
     private EventQueue _eventQueue;
-    public EventQueue eventQueue
+    private PlayerInput _input;
+    private PlayerInput input
     {
         get
         {
-            if (_eventQueue == null)
-                _eventQueue = gameObject.GetOrAddComponent<EventQueue>();
-            return _eventQueue;
+            if (_input == null) _input = FindObjectOfType<PlayerInput>();
+            return _input;
         }
     }
-    private PointOfInterest chosenPointOfInterest;
 
     private void Start()
     {
@@ -72,6 +85,7 @@ public class Client : StateMachine<ClientState>
         ChooseNextEvent();
         eventQueue.onQueueEmpty.AddListener(ChooseNextEvent);
         eventQueue.ExecuteNextEvent();
+        input.actions["Interact"].performed += ctx => CatchStealing();
     }
 
     private void Update()
@@ -173,8 +187,9 @@ public class Client : StateMachine<ClientState>
         GetComponent<AIDestinationSetter>().target = newTarget;
     }
 
-    public void LeaveStore()
+    public async void LeaveStore()
     {
+        await UniTask.Delay(200);
         // Add walk to interest point event
         LeaveEvent leaveEvent = gameObject.AddComponent<LeaveEvent>();
         leaveEvent.client = this;
@@ -189,14 +204,23 @@ public class Client : StateMachine<ClientState>
         {
             isSeen = true;
         }
+        else if (other.tag.ToLower().Equals("player"))
+        {
+            isTouchingPlayer = true;
+            Debug.Log("Touching player");
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (isSeen) return;
         if (other.tag.ToLower().Equals("unmask"))
         {
             isSeen = true;
+        }
+        else if (other.tag.ToLower().Equals("player"))
+        {
+            isTouchingPlayer = true;
+            Debug.Log("Touching player");
         }
     }
 
@@ -206,11 +230,27 @@ public class Client : StateMachine<ClientState>
         {
             isSeen = false;
         }
+        if (other.tag.ToLower().Equals("player"))
+        {
+            isTouchingPlayer = false;
+        }
     }
 
     [Button]
     public void ChangeAppearance()
     {
         GetComponentInChildren<SpriteResolver>().spriteLibrary.spriteLibraryAsset = spritesCollection.getRandom();
+    }
+
+    public void CatchStealing()
+    {
+        if (!seenStealing) return;
+
+        // TODO: Leave items on the floor
+        currentNumberOfItems = 0;
+
+        seenStealing = false;
+        eventQueue.Clear();
+        LeaveStore();
     }
 }
