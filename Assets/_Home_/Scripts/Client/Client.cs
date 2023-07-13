@@ -175,20 +175,22 @@ public class Client : StateMachine<ClientState>
         return false;
     }
 
-    private void GoToCashier()
+    private async void GoToCashier()
     {
-        Transform newTarget = FindObjectOfType<Cashier>().GetFreeSpot(this);
-        if (newTarget == null)
-        {
-            LevelManager.Instance.unsatisfiedClients++;
-            // TODO: Drop their items
-            return;
-        }
-        GetComponent<AIDestinationSetter>().target = newTarget;
+        eventQueue.Clear();
+        await UniTask.Delay(200).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
+        // Add walk to interest point event
+        GoToCashierEvent goToCashierEvent = gameObject.AddComponent<GoToCashierEvent>();
+        goToCashierEvent.client = this;
+        eventQueue.AddEvent(goToCashierEvent);
+        eventQueue.ExecuteNextEvent();
     }
 
-    public void LeaveStore()
+    public async void LeaveStore()
     {
+        eventQueue.Clear();
+        await UniTask.Delay(200).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
+
         // Add walk to interest point event
         LeaveEvent leaveEvent = gameObject.AddComponent<LeaveEvent>();
         leaveEvent.client = this;
@@ -242,13 +244,17 @@ public class Client : StateMachine<ClientState>
     public async void CatchStealing()
     {
         if (!seenStealing) return;
+        if (!isTouchingPlayer) return;
+        DropItems();
 
-        // TODO: Leave items on the floor
-        currentNumberOfItems = 0;
+        GetComponentInChildren<SpriteRenderer>().color = Color.gray;
 
         seenStealing = false;
-        eventQueue.Clear();
-        await UniTask.Delay(100);
         LeaveStore();
+    }
+
+    public void DropItems()
+    {
+        currentNumberOfItems = 0;
     }
 }

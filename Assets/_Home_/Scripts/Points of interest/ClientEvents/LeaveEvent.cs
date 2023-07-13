@@ -8,20 +8,9 @@ using UtilityMethods;
 
 public class LeaveEvent : ClientEvent
 {
-    private AIPath aiPath;
-    private AIDestinationSetter _destinationSetter;
-    public AIDestinationSetter destinationSetter
-    {
-        get
-        {
-            if (_destinationSetter == null) _destinationSetter = GetComponent<AIDestinationSetter>();
-            return _destinationSetter;
-        }
-    }
     public override void Setup(EventQueue newQueue)
     {
         base.Setup(newQueue);
-        aiPath = GetComponent<AIPath>();
     }
     public override async UniTask Execute()
     {
@@ -29,15 +18,9 @@ public class LeaveEvent : ClientEvent
         Transform newTarget = GameObject.Find("Door").transform;
         destinationSetter.target = newTarget;
         await UniTask.Delay(200);
-        await UniTask.WaitUntil(HasArrivedToDestination);
+        await UniTask.WaitUntil(HasArrivedToDestination).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
         await UniTask.Delay(500);
         End();
-    }
-
-    private bool HasArrivedToDestination()
-    {
-        bool hasArrived = aiPath.reachedDestination;
-        return hasArrived;
     }
 
     public override void End()
@@ -46,7 +29,7 @@ public class LeaveEvent : ClientEvent
         {
             LevelManager.Instance.stolenItems += client.currentNumberOfItems;
         }
-        UtilityMethods.UniTaskMethods.DelayedFunction(() => LevelManager.Instance.SpawnClient(), 1f).Forget();
+        UtilityMethods.UniTaskMethods.DelayedFunction(() => LevelManager.Instance.SpawnClient(), 1f).AttachExternalCancellation(this.GetCancellationTokenOnDestroy()).Forget();
         Destroy(client.gameObject);
         base.End();
     }

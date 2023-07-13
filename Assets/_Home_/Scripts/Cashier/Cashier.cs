@@ -26,6 +26,18 @@ public class Cashier : MonoBehaviour
         return null;
     }
 
+    public void CustomerLeft(Client client)
+    {
+        for (int i = 0; i < spots.Count; i++)
+        {
+            if (spots[i].client == client)
+            {
+                UpdateClientsPositions(i);
+                return;
+            }
+        }
+    }
+
     [Button]
     public void RingUp()
     {
@@ -47,14 +59,19 @@ public class Cashier : MonoBehaviour
         client.currentNumberOfItems = 0;
 
         client.LeaveStore();
+        UpdateClientsPositions();
+    }
+
+    private void UpdateClientsPositions(int latestLeftCustomer = 0)
+    {
 
         // Move each client to the next spot
-        for (int i = 0; i < spots.Count - 1; i++)
+        for (; latestLeftCustomer < spots.Count - 1; latestLeftCustomer++)
         {
-            Spot spot = spots[i];
-            if (i != 0 && spot.client == null) break;
-            spot.client = spots[i + 1].client;
-            spots[i] = spot;
+            Spot spot = spots[latestLeftCustomer];
+            if (latestLeftCustomer != 0 && spot.client == null) break;
+            spot.client = spots[latestLeftCustomer + 1].client;
+            spots[latestLeftCustomer] = spot;
         }
 
         // Set last spot free

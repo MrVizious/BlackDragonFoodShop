@@ -18,23 +18,23 @@ MonoBehaviour:
       GUID: 00c6104f5ae96314e93b632aff275402
       _typeNameAndAssembly: LookEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 60
+    probability: 45
   - eventType:
       GuidAssignmentFailed: 0
       GUID: 244385aa68a155b4b8cb4b059bd79bb7
       _typeNameAndAssembly: GrabItemEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 40
+    probability: 65
   thiefEvents:
   - eventType:
       GuidAssignmentFailed: 0
       GUID: 00c6104f5ae96314e93b632aff275402
       _typeNameAndAssembly: LookEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 70
+    probability: 60
   - eventType:
       GuidAssignmentFailed: 0
       GUID: 59d61bc87e51ea844a3eb3daf4f79946
       _typeNameAndAssembly: StealItemEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 30
+    probability: 40

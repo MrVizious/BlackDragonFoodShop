@@ -28,7 +28,6 @@ public class ThiefFoundSpriteAnimation : MonoBehaviour
     }
     private void OnDestroy()
     {
-
         spriteRenderer.color = initialColor;
     }
 }
