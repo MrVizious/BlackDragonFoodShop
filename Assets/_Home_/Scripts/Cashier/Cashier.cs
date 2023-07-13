@@ -42,7 +42,9 @@ public class Cashier : MonoBehaviour
         if (Vector2.Distance(client.transform.position, transform.position) > 1f) return;
 
         // Ring up
-        // TODO: Add points for each sold item
+        LevelManager.Instance.points += client.currentNumberOfItems;
+        client.currentNumberOfItems = 0;
+
         // Add walk to interest point event
         LeaveEvent leaveEvent = client.gameObject.AddComponent<LeaveEvent>();
         leaveEvent.client = client;

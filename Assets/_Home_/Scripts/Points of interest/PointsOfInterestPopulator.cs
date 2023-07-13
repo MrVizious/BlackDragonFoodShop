@@ -4,7 +4,7 @@ using UnityEngine;
 using DesignPatterns;
 using RuntimeSet;
 
-public class PointsOfInterestManager : MonoBehaviour
+public class PointsOfInterestPopulator : MonoBehaviour
 {
     public List<PointOfInterest> allPointsOfInterest = new List<PointOfInterest>();
     public RuntimeSetPointOfInterest activePointsOfInterest;

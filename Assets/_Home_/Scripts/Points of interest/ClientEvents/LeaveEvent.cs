@@ -25,9 +25,7 @@ public class LeaveEvent : ClientEvent
     public override async UniTask Execute()
     {
         await base.Execute();
-        Transform newTarget = GameObject.Find("Exit").transform;
-        Debug.Log("New Target is: " + newTarget);
-        Debug.Log("AI Destination setter: " + destinationSetter);
+        Transform newTarget = GameObject.Find("Door").transform;
         destinationSetter.target = newTarget;
         await UniTask.Delay(200);
         await UniTask.WaitUntil(HasArrivedToDestination);
@@ -43,6 +41,10 @@ public class LeaveEvent : ClientEvent
 
     public override void End()
     {
+        if (client.currentNumberOfItems > 0)
+        {
+            LevelManager.Instance.stolenItems += client.currentNumberOfItems;
+        }
         Destroy(client.gameObject);
         base.End();
     }

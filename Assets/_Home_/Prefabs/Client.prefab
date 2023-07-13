@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6398982270173603904}
   - component: {fileID: 7915682108798263250}
   - component: {fileID: 1818390047001698720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Client
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   rotationSpeed: 360
   slowdownDistance: 0.6
   pickNextWaypointDist: 0.4
-  endReachedDistance: 0.8
+  endReachedDistance: 0.5
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0

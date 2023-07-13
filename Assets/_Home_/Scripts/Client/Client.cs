@@ -144,7 +144,14 @@ public class Client : StateMachine<ClientState>
 
     private void GoToCashier()
     {
-        GetComponent<AIDestinationSetter>().target = FindObjectOfType<Cashier>().GetFreeSpot(this);
+        Transform newTarget = FindObjectOfType<Cashier>().GetFreeSpot(this);
+        if (newTarget == null)
+        {
+            LevelManager.Instance.unsatisfiedClients++;
+            // TODO: Drop their items
+            return;
+        }
+        GetComponent<AIDestinationSetter>().target = newTarget;
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
