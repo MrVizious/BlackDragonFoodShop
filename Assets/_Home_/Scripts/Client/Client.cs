@@ -187,9 +187,8 @@ public class Client : StateMachine<ClientState>
         GetComponent<AIDestinationSetter>().target = newTarget;
     }
 
-    public async void LeaveStore()
+    public void LeaveStore()
     {
-        await UniTask.Delay(200);
         // Add walk to interest point event
         LeaveEvent leaveEvent = gameObject.AddComponent<LeaveEvent>();
         leaveEvent.client = this;
@@ -207,7 +206,6 @@ public class Client : StateMachine<ClientState>
         else if (other.tag.ToLower().Equals("player"))
         {
             isTouchingPlayer = true;
-            Debug.Log("Touching player");
         }
     }
 
@@ -220,7 +218,6 @@ public class Client : StateMachine<ClientState>
         else if (other.tag.ToLower().Equals("player"))
         {
             isTouchingPlayer = true;
-            Debug.Log("Touching player");
         }
     }
 
@@ -242,7 +239,7 @@ public class Client : StateMachine<ClientState>
         GetComponentInChildren<SpriteResolver>().spriteLibrary.spriteLibraryAsset = spritesCollection.getRandom();
     }
 
-    public void CatchStealing()
+    public async void CatchStealing()
     {
         if (!seenStealing) return;
 
@@ -251,6 +248,7 @@ public class Client : StateMachine<ClientState>
 
         seenStealing = false;
         eventQueue.Clear();
+        await UniTask.Delay(100);
         LeaveStore();
     }
 }

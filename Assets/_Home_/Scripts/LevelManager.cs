@@ -71,6 +71,7 @@ public class LevelManager : Singleton<LevelManager>
     [Button]
     public void SpawnClient()
     {
+        Debug.Log("Spawed");
         Client newClient = Instantiate(clientPrefab, door.position, Quaternion.identity, transform).GetComponent<Client>();
         bool isThief = Math.ProbabilityCheck(maxThiefChance);
         newClient.isThief = isThief;
