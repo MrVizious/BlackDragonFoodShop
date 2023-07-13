@@ -6,6 +6,16 @@ using UnityEngine.InputSystem;
 
 public class SecurityCamera : PointOfInterest
 {
+    public Sprite notWorkingSprite, workingSprite;
+    private SpriteRenderer _spriteRenderer;
+    private SpriteRenderer spriteRenderer
+    {
+        get
+        {
+            if (_spriteRenderer == null) _spriteRenderer = GetComponent<SpriteRenderer>();
+            return _spriteRenderer;
+        }
+    }
     private PlayerInput _input;
     private PlayerInput input
     {
@@ -15,6 +25,7 @@ public class SecurityCamera : PointOfInterest
             return _input;
         }
     }
+    [OnValueChanged("UpdateWorking")]
     [SerializeField]
     private bool isWorking = true;
     [SerializeField]
@@ -45,6 +56,14 @@ public class SecurityCamera : PointOfInterest
     {
         isWorking = newValue;
         meshRenderer.gameObject.SetActive(isWorking);
+        if (isWorking)
+        {
+            spriteRenderer.sprite = workingSprite;
+        }
+        else
+        {
+            spriteRenderer.sprite = notWorkingSprite;
+        }
     }
 
 

@@ -5652,6 +5652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Security Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 800083507110070016, guid: 6c335be6f203da44ba53029e0b182982, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1461190781280416482, guid: 6c335be6f203da44ba53029e0b182982, type: 3}
       propertyPath: m_Mesh
       value: 
