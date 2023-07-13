@@ -43,14 +43,10 @@ public class Cashier : MonoBehaviour
 
         // Ring up
         LevelManager.Instance.points += client.currentNumberOfItems;
+        LevelManager.Instance.rangUpClients++;
         client.currentNumberOfItems = 0;
 
-        // Add walk to interest point event
-        LeaveEvent leaveEvent = client.gameObject.AddComponent<LeaveEvent>();
-        leaveEvent.client = client;
-        client.eventQueue.AddEvent(leaveEvent);
-        client.eventQueue.ExecuteNextEvent();
-
+        client.LeaveStore();
 
         // Move each client to the next spot
         for (int i = 0; i < spots.Count - 1; i++)

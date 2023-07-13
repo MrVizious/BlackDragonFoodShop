@@ -2,13 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using UnityEngine.InputSystem;
 
 public class SecurityCamera : PointOfInterest
 {
-    [OnValueChanged("UpdateWorking")]
+    private PlayerInput _input;
+    private PlayerInput input
+    {
+        get
+        {
+            if (_input == null) _input = FindObjectOfType<PlayerInput>();
+            return _input;
+        }
+    }
     [SerializeField]
     private bool isWorking = true;
-
+    [SerializeField]
+    private bool isManned = false;
 
     private MeshRenderer _meshRenderer;
     private MeshRenderer meshRenderer
@@ -23,6 +33,7 @@ public class SecurityCamera : PointOfInterest
     private void Start()
     {
         UpdateWorking();
+        input.actions["Interact"].performed += ctx => Repair();
     }
 
     private void UpdateWorking()
@@ -34,5 +45,34 @@ public class SecurityCamera : PointOfInterest
     {
         isWorking = newValue;
         meshRenderer.gameObject.SetActive(isWorking);
+    }
+
+
+    public void Repair()
+    {
+        if (isManned) SetWorking(true);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag.ToLower().Equals("player"))
+        {
+            isManned = true;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag.ToLower().Equals("player"))
+        {
+            isManned = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag.ToLower().Equals("player"))
+        {
+            isManned = false;
+        }
     }
 }

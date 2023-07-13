@@ -17,9 +17,8 @@ public class LevelManager : Singleton<LevelManager>
         get => _rangUpClients;
         set
         {
-            if (rangUpClients == clientsPerLevel) LevelUp();
-            if (_rangUpClients < value) SpawnClient();
             _rangUpClients = value;
+            if (_rangUpClients == clientsPerLevel) LevelUp();
         }
     }
     public int maxClientsInStore = 3;
@@ -70,7 +69,7 @@ public class LevelManager : Singleton<LevelManager>
     }
 
     [Button]
-    private void SpawnClient()
+    public void SpawnClient()
     {
         Client newClient = Instantiate(clientPrefab, door.position, Quaternion.identity, transform).GetComponent<Client>();
         bool isThief = Math.ProbabilityCheck(maxThiefChance);

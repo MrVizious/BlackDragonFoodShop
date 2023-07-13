@@ -45,6 +45,7 @@ public class LeaveEvent : ClientEvent
         {
             LevelManager.Instance.stolenItems += client.currentNumberOfItems;
         }
+        LevelManager.Instance.SpawnClient();
         Destroy(client.gameObject);
         base.End();
     }

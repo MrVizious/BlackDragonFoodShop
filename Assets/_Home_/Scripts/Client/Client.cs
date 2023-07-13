@@ -12,10 +12,28 @@ public class Client : StateMachine<ClientState>
 {
     public bool isSeen = false;
     public bool isThief = false;
+    public bool seenStealing
+    {
+        get => _seenStealing;
+        set
+        {
+            if (value)
+            {
+                this.GetOrAddComponent<ThiefFoundSpriteAnimation>();
+            }
+            else
+            {
+                ThiefFoundSpriteAnimation animation = GetComponent<ThiefFoundSpriteAnimation>();
+                Destroy(animation);
+            }
+            _seenStealing = value;
+        }
+    }
     public ClientSpritesCollection spritesCollection;
     public RuntimeSetPointOfInterest activePointsOfInterest;
     public int currentNumberOfItems = 0;
 
+    private bool _seenStealing = false;
     private AIPath _seeker;
     private AIPath seeker
     {
@@ -87,9 +105,10 @@ public class Client : StateMachine<ClientState>
     [Button]
     public void ChooseNextEvent()
     {
-        if (DoesGoToCashier())
+        if (DoesStopRoaming())
         {
-            GoToCashier();
+            if (!isThief) GoToCashier();
+            else LeaveStore();
             return;
         }
         if (activePointsOfInterest.Items.Count <= 0) return;
@@ -112,7 +131,7 @@ public class Client : StateMachine<ClientState>
     /// Calculate whether the client goes to pay for the items or not
     /// </summary>
     /// <returns></returns>
-    private bool DoesGoToCashier()
+    private bool DoesStopRoaming()
     {
         if (currentNumberOfItems <= 0) return false;
 
@@ -153,6 +172,17 @@ public class Client : StateMachine<ClientState>
         }
         GetComponent<AIDestinationSetter>().target = newTarget;
     }
+
+    public void LeaveStore()
+    {
+        // Add walk to interest point event
+        LeaveEvent leaveEvent = gameObject.AddComponent<LeaveEvent>();
+        leaveEvent.client = this;
+        eventQueue.AddEvent(leaveEvent);
+        eventQueue.ExecuteNextEvent();
+    }
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag.ToLower().Equals("unmask"))

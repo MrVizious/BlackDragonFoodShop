@@ -18,17 +18,17 @@ MonoBehaviour:
       GUID: 00c6104f5ae96314e93b632aff275402
       _typeNameAndAssembly: LookEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 50
+    probability: 100
   thiefEvents:
   - eventType:
       GuidAssignmentFailed: 0
       GUID: 40d06a244068029408dffa304319aabb
       _typeNameAndAssembly: BreakCameraEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 70
+    probability: 35
   - eventType:
       GuidAssignmentFailed: 0
       GUID: 00c6104f5ae96314e93b632aff275402
       _typeNameAndAssembly: LookEvent, Assembly-CSharp
       _suppressLogs: 0
-    probability: 30
+    probability: 65
