@@ -11,13 +11,28 @@ using Sirenix.OdinInspector;
 public class PlayerController : StateMachine<PlayerState>
 {
 
+    [Header("Data")]
     public PlayerData playerData;
-    public Animator animator;
-    public ClientSpritesCollection spritesCollection;
+
+    [Header("References")]
+    public SpriteRenderer carryItemSpriteRenderer;
+
+    [Header("Current data")]
     public int currentTrashAmount = 0;
     [HideInInspector] public Rigidbody2D rb { get; private set; }
     [HideInInspector] public Vector2 lastMovementInput = Vector2.zero;
     [HideInInspector] public HashSet<Collider2D> touchingColliders;
+
+
+    private Animator _animator;
+    private Animator animator
+    {
+        get
+        {
+            if (_animator == null) _animator = GetComponentInChildren<Animator>();
+            return _animator;
+        }
+    }
 
     protected override void Awake()
     {
@@ -78,11 +93,4 @@ public class PlayerController : StateMachine<PlayerState>
     {
         touchingColliders.Remove(other.collider);
     }
-
-    [Button]
-    public void ChangeAppearance()
-    {
-        GetComponentInChildren<SpriteResolver>().spriteLibrary.spriteLibraryAsset = spritesCollection.getNext();
-    }
-
 }

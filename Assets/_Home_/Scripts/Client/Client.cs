@@ -259,7 +259,9 @@ public class Client : StateMachine<ClientState>
     public void DropItems()
     {
         if (currentNumberOfItems > 0)
+        {
             Instantiate(trashPrefab, transform.position, Quaternion.identity);
+        }
         currentNumberOfItems = 0;
     }
 }

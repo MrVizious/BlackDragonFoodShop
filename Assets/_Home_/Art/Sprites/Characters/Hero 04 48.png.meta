@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -126,12 +126,12 @@ TextureImporter:
       name: Idle_Down_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 720
-        width: 48
-        height: 48
+        x: 18
+        y: 1058
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: Idle_Down_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 720
-        width: 48
-        height: 48
+        x: 86
+        y: 1058
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -168,12 +168,12 @@ TextureImporter:
       name: Idle_Down_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 720
-        width: 48
-        height: 48
+        x: 154
+        y: 1058
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Idle_Down_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 720
-        width: 48
-        height: 48
+        x: 222
+        y: 1058
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -210,12 +210,12 @@ TextureImporter:
       name: Idle_Left_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 672
-        width: 48
-        height: 48
+        x: 18
+        y: 990
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -231,12 +231,12 @@ TextureImporter:
       name: Idle_Left_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 672
-        width: 48
-        height: 48
+        x: 86
+        y: 990
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -252,12 +252,12 @@ TextureImporter:
       name: Idle_Left_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 672
-        width: 48
-        height: 48
+        x: 154
+        y: 990
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -273,12 +273,12 @@ TextureImporter:
       name: Idle_Left_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 672
-        width: 48
-        height: 48
+        x: 222
+        y: 990
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -294,12 +294,12 @@ TextureImporter:
       name: Idle_Right_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 624
-        width: 48
-        height: 48
+        x: 18
+        y: 922
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -315,12 +315,12 @@ TextureImporter:
       name: Idle_Right_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 624
-        width: 48
-        height: 48
+        x: 86
+        y: 922
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -336,12 +336,12 @@ TextureImporter:
       name: Idle_Right_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 624
-        width: 48
-        height: 48
+        x: 154
+        y: 922
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -357,12 +357,12 @@ TextureImporter:
       name: Idle_Right_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 624
-        width: 48
-        height: 48
+        x: 222
+        y: 922
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -378,12 +378,12 @@ TextureImporter:
       name: Idle_Up_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 576
-        width: 48
-        height: 48
+        x: 18
+        y: 854
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -399,12 +399,12 @@ TextureImporter:
       name: Idle_Up_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 576
-        width: 48
-        height: 48
+        x: 86
+        y: 854
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -420,12 +420,12 @@ TextureImporter:
       name: Idle_Up_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 576
-        width: 48
-        height: 48
+        x: 154
+        y: 854
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -441,12 +441,12 @@ TextureImporter:
       name: Idle_Up_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 576
-        width: 48
-        height: 48
+        x: 222
+        y: 854
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -462,12 +462,12 @@ TextureImporter:
       name: Walking_Down_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 528
-        width: 48
-        height: 48
+        x: 18
+        y: 786
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -483,12 +483,12 @@ TextureImporter:
       name: Walking_Down_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 528
-        width: 48
-        height: 48
+        x: 86
+        y: 786
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -504,12 +504,12 @@ TextureImporter:
       name: Walking_Down_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 528
-        width: 48
-        height: 48
+        x: 154
+        y: 786
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -525,12 +525,12 @@ TextureImporter:
       name: Walking_Down_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 528
-        width: 48
-        height: 48
+        x: 222
+        y: 786
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -546,12 +546,12 @@ TextureImporter:
       name: Walking_Left_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 480
-        width: 48
-        height: 48
+        x: 18
+        y: 718
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -567,12 +567,12 @@ TextureImporter:
       name: Walking_Left_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 480
-        width: 48
-        height: 48
+        x: 86
+        y: 718
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -588,12 +588,12 @@ TextureImporter:
       name: Walking_Left_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 480
-        width: 48
-        height: 48
+        x: 154
+        y: 718
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -609,12 +609,12 @@ TextureImporter:
       name: Walking_Left_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 480
-        width: 48
-        height: 48
+        x: 222
+        y: 718
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -630,12 +630,12 @@ TextureImporter:
       name: Walking_Right_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 432
-        width: 48
-        height: 48
+        x: 18
+        y: 650
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -651,12 +651,12 @@ TextureImporter:
       name: Walking_Right_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 432
-        width: 48
-        height: 48
+        x: 86
+        y: 650
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -672,12 +672,12 @@ TextureImporter:
       name: Walking_Right_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 432
-        width: 48
-        height: 48
+        x: 154
+        y: 650
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -693,12 +693,12 @@ TextureImporter:
       name: Walking_Right_3
       rect:
         serializedVersion: 2
-        x: 146
-        y: 432
-        width: 48
-        height: 48
+        x: 222
+        y: 650
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -714,12 +714,12 @@ TextureImporter:
       name: Walking_Up_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 384
-        width: 48
-        height: 48
+        x: 18
+        y: 582
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -735,12 +735,12 @@ TextureImporter:
       name: Walking_Up_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 384
-        width: 48
-        height: 48
+        x: 86
+        y: 582
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -756,12 +756,12 @@ TextureImporter:
       name: Walking_Up_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 384
-        width: 48
-        height: 48
+        x: 154
+        y: 582
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -777,12 +777,12 @@ TextureImporter:
       name: Walking_Up_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 384
-        width: 48
-        height: 48
+        x: 222
+        y: 582
+        width: 52
+        height: 52
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -805,6 +805,54 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Hero 01 48_0: 1560764095
+      Hero 01 48_1: 1307002754
+      Hero 01 48_10: 1654072542
+      Hero 01 48_11: -200734157
+      Hero 01 48_12: -984143614
+      Hero 01 48_13: 98589846
+      Hero 01 48_14: -1074797988
+      Hero 01 48_15: 1116590699
+      Hero 01 48_16: 1792452229
+      Hero 01 48_17: -1815078621
+      Hero 01 48_18: -2026762401
+      Hero 01 48_19: 1844910547
+      Hero 01 48_2: -1324472310
+      Hero 01 48_20: 1305604973
+      Hero 01 48_21: -980662607
+      Hero 01 48_22: 709702371
+      Hero 01 48_23: 1151215517
+      Hero 01 48_24: 485715152
+      Hero 01 48_25: -2008196750
+      Hero 01 48_26: -1522013550
+      Hero 01 48_27: 1520553300
+      Hero 01 48_28: 1987916782
+      Hero 01 48_29: -1562446115
+      Hero 01 48_3: -1136518236
+      Hero 01 48_30: 218800050
+      Hero 01 48_31: -1404386516
+      Hero 01 48_32: -638586888
+      Hero 01 48_33: -1506217801
+      Hero 01 48_34: -275881570
+      Hero 01 48_35: -849766780
+      Hero 01 48_36: 8805465
+      Hero 01 48_37: -1027237454
+      Hero 01 48_38: -942185366
+      Hero 01 48_39: 1641563262
+      Hero 01 48_4: 1967009785
+      Hero 01 48_40: -152874295
+      Hero 01 48_41: -676789218
+      Hero 01 48_42: 1296761474
+      Hero 01 48_43: -816810235
+      Hero 01 48_44: 711116887
+      Hero 01 48_45: 1696210336
+      Hero 01 48_46: -1245100723
+      Hero 01 48_47: -2049535509
+      Hero 01 48_5: 668730889
+      Hero 01 48_6: 467766034
+      Hero 01 48_7: 180267025
+      Hero 01 48_8: 1459905626
+      Hero 01 48_9: 1464838289
       Idle_Down_0: 460883621
       Idle_Down_1: -1730929119
       Idle_Down_2: -1619966727
