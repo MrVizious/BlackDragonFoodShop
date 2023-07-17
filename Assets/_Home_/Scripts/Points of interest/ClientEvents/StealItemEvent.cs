@@ -23,11 +23,6 @@ public class StealItemEvent : ClientEvent
             {
                 client.seenStealing = true;
             }
-            Debug.Log("Item stolen!");
-        }
-        else
-        {
-            Debug.Log("There are no items to steal!");
         }
         await UniTask.Delay((int)durationInSeconds * 1000 / 2).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
         End();

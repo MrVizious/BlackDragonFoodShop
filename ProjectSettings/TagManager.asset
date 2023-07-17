@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Unmask
   - Client
+  - Trash
+  - Camera
   layers:
   - Default
   - TransparentFX
@@ -45,6 +47,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trash
+    uniqueID: 3038181745
     locked: 0
   - name: Characters
     uniqueID: 1118902903

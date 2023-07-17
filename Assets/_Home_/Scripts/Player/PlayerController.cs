@@ -14,9 +14,9 @@ public class PlayerController : StateMachine<PlayerState>
     public PlayerData playerData;
     public Animator animator;
     public ClientSpritesCollection spritesCollection;
+    public int currentTrashAmount = 0;
     [HideInInspector] public Rigidbody2D rb { get; private set; }
     [HideInInspector] public Vector2 lastMovementInput = Vector2.zero;
-
     [HideInInspector] public HashSet<Collider2D> touchingColliders;
 
     protected override void Awake()
@@ -24,6 +24,7 @@ public class PlayerController : StateMachine<PlayerState>
         base.Awake();
         touchingColliders = new HashSet<Collider2D>();
     }
+
     private void Start()
     {
         rb = this.GetOrAddComponent<Rigidbody2D>();

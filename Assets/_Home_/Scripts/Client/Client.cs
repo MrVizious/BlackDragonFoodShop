@@ -14,6 +14,7 @@ public class Client : StateMachine<ClientState>
 {
     public bool isSeen = false;
     public bool isThief = false;
+    public Trash trashPrefab;
     public bool seenStealing
     {
         get => _seenStealing;
@@ -31,6 +32,7 @@ public class Client : StateMachine<ClientState>
             _seenStealing = value;
         }
     }
+
     public ClientSpritesCollection spritesCollection;
     public RuntimeSetPointOfInterest activePointsOfInterest;
     public int currentNumberOfItems = 0;
@@ -179,6 +181,7 @@ public class Client : StateMachine<ClientState>
     {
         eventQueue.Clear();
         await UniTask.Delay(200).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
+
         // Add walk to interest point event
         GoToCashierEvent goToCashierEvent = gameObject.AddComponent<GoToCashierEvent>();
         goToCashierEvent.client = this;
@@ -255,6 +258,8 @@ public class Client : StateMachine<ClientState>
 
     public void DropItems()
     {
+        if (currentNumberOfItems > 0)
+            Instantiate(trashPrefab, transform.position, Quaternion.identity);
         currentNumberOfItems = 0;
     }
 }

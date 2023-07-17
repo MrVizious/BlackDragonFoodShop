@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1818390047001698720}
   m_Layer: 7
   m_Name: Client
-  m_TagString: Untagged
+  m_TagString: Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSeen: 0
   isThief: 0
+  trashPrefab: {fileID: 6775443624812936046, guid: cb2ef92328fd07342a665414aa87fdeb, type: 3}
   spritesCollection: {fileID: 11400000, guid: ba49f1273c302934ea5e2bfc14c663f2, type: 2}
   activePointsOfInterest: {fileID: 11400000, guid: 7323b1226ae78684e99c34372ae67af6, type: 2}
   currentNumberOfItems: 0
@@ -293,7 +294,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1118902903
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 738737497, guid: 4a0c8cf7527e1154aaca61fc773cec27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

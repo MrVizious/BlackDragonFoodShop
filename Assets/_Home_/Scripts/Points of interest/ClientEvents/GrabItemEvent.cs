@@ -19,11 +19,12 @@ public class GrabItemEvent : ClientEvent
         {
             itemShelf.currentItemCount--;
             client.currentNumberOfItems++;
-            Debug.Log("Item taken!");
         }
         else
         {
-            Debug.Log("There are no items!");
+            LevelManager.Instance.unsatisfiedClients++;
+            client.DropItems();
+            client.LeaveStore();
         }
         await UniTask.Delay((int)durationInSeconds * 1000 / 2).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
         End();
