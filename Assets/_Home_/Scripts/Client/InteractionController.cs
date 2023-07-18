@@ -32,10 +32,10 @@ public class InteractionController : MonoBehaviour
     }
     private void Start()
     {
-        input.actions["Interact"].performed += ctx => Interact();
+        input.actions["Interact"].started += ctx => Interact(ctx);
     }
 
-    public void Interact()
+    public void Interact(InputAction.CallbackContext ctx)
     {
         if (interactions.Count <= 0) return;
         if (selectedIndex < 0 || selectedIndex >= interactions.Count) return;
@@ -43,9 +43,9 @@ public class InteractionController : MonoBehaviour
         RemoveInteraction(interactions[selectedIndex].behaviour);
         if (selectedIndex >= interactions.Count) selectedIndex--;
     }
+
     public void AddInteraction(MonoBehaviour behaviour, System.Action action)
     {
-        Debug.Log("Adding interaction");
         foreach (Interaction interaction in interactions)
         {
             if (interaction.behaviour == behaviour) return;
@@ -59,7 +59,6 @@ public class InteractionController : MonoBehaviour
 
     public void RemoveInteraction(MonoBehaviour behaviour)
     {
-
         behaviour.GetComponentInChildren<SpriteRenderer>().material.SetFloat("_Active", 0f);
         for (int i = 0; i < interactions.Count; i++)
         {
@@ -75,6 +74,7 @@ public class InteractionController : MonoBehaviour
         }
     }
 
+    [System.Serializable]
     private struct Interaction
     {
         public MonoBehaviour behaviour;
