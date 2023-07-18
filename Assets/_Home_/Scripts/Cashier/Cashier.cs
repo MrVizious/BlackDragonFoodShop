@@ -8,8 +8,6 @@ using Sirenix.OdinInspector;
 public class Cashier : MonoBehaviour
 {
     public List<Spot> spots = new List<Spot>();
-    [SerializeField]
-    private bool isManned = false;
 
     public Transform GetFreeSpot(Client client)
     {
@@ -41,7 +39,6 @@ public class Cashier : MonoBehaviour
     [Button]
     public void RingUp()
     {
-        if (!isManned) return;
         Client client = spots[0].client;
         // There is no client to ring up
         if (client == null)
@@ -50,8 +47,7 @@ public class Cashier : MonoBehaviour
             return;
         }
 
-        //The client is too far away
-        if (Vector2.Distance(client.transform.position, transform.position) > 1f) return;
+        if (!IsFirstClientAtCounter()) return;
 
         // Ring up
         LevelManager.Instance.points += client.currentNumberOfItems;
@@ -60,6 +56,13 @@ public class Cashier : MonoBehaviour
 
         client.LeaveStore();
         UpdateClientsPositions();
+    }
+
+    private bool IsFirstClientAtCounter()
+    {
+        if (spots[0].client == null) return false;
+        //The client is too far away
+        return Vector2.Distance(spots[0].client.transform.position, transform.position) < 1f;
     }
 
     private void UpdateClientsPositions(int latestLeftCustomer = 0)
@@ -89,23 +92,31 @@ public class Cashier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (spots[0].client == null) return;
+        if (!IsFirstClientAtCounter()) return;
         if (other.tag.ToLower().Equals("player"))
         {
-            isManned = true;
+            InteractionController interactionController = other.GetComponent<InteractionController>();
+            interactionController.AddInteraction(spots[0].client, RingUp);
         }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (spots[0].client == null) return;
+        if (!IsFirstClientAtCounter()) return;
         if (other.tag.ToLower().Equals("player"))
         {
-            isManned = true;
+            InteractionController interactionController = other.GetComponent<InteractionController>();
+            interactionController.AddInteraction(spots[0].client, RingUp);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (spots[0].client == null) return;
         if (other.tag.ToLower().Equals("player"))
         {
-            isManned = false;
+            InteractionController interactionController = other.GetComponent<InteractionController>();
+            interactionController.RemoveInteraction(spots[0].client);
         }
     }
 }
