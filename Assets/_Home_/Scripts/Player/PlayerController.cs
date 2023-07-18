@@ -21,7 +21,7 @@ public class PlayerController : StateMachine<PlayerState>
     public int currentTrashAmount = 0;
     [HideInInspector] public Rigidbody2D rb { get; private set; }
     [HideInInspector] public Vector2 lastMovementInput = Vector2.zero;
-    [HideInInspector] public HashSet<Collider2D> touchingColliders;
+
 
 
     private Animator _animator;
@@ -37,7 +37,6 @@ public class PlayerController : StateMachine<PlayerState>
     protected override void Awake()
     {
         base.Awake();
-        touchingColliders = new HashSet<Collider2D>();
     }
 
     private void Start()
@@ -80,17 +79,6 @@ public class PlayerController : StateMachine<PlayerState>
             animator.SetBool("Walking", false);
         }
 
-
-
         currentState.Move(c);
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        touchingColliders.Add(other.collider);
-    }
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        touchingColliders.Remove(other.collider);
     }
 }

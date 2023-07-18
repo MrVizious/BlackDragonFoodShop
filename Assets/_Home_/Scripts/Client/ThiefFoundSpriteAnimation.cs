@@ -25,7 +25,6 @@ public class ThiefFoundSpriteAnimation : MonoBehaviour
     void Update()
     {
         Color newColor = Color.Lerp(initialColor, targetColor, Mathf.Sin(Time.time * blinkingSpeed));
-        Debug.Log("Setting color");
         spriteRenderer.material.SetColor("_MainColor", newColor);
     }
     private void OnDestroy()

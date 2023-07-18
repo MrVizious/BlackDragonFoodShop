@@ -16,20 +16,8 @@ public class SecurityCamera : PointOfInterest
             return _spriteRenderer;
         }
     }
-    private PlayerInput _input;
-    private PlayerInput input
-    {
-        get
-        {
-            if (_input == null) _input = FindObjectOfType<PlayerInput>();
-            return _input;
-        }
-    }
-    [OnValueChanged("UpdateWorking")]
     [SerializeField]
     private bool isWorking = true;
-    [SerializeField]
-    private bool isManned = false;
 
     private MeshRenderer _meshRenderer;
     private MeshRenderer meshRenderer
@@ -44,13 +32,14 @@ public class SecurityCamera : PointOfInterest
     private void Start()
     {
         UpdateWorking();
-        input.actions["Interact"].performed += ctx => Repair();
     }
 
     private void UpdateWorking()
     {
         SetWorking(isWorking);
     }
+
+
     [Button]
     public void SetWorking(bool newValue)
     {
@@ -69,29 +58,35 @@ public class SecurityCamera : PointOfInterest
 
     public void Repair()
     {
-        if (isManned) SetWorking(true);
+        SetWorking(true);
     }
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (isWorking) return;
         if (other.tag.ToLower().Equals("player"))
         {
-            isManned = true;
+            InteractionController interactionController = other.GetComponent<InteractionController>();
+            interactionController.AddInteraction(this, Repair);
         }
     }
     private void OnTriggerStay2D(Collider2D other)
     {
+        if (isWorking) return;
         if (other.tag.ToLower().Equals("player"))
         {
-            isManned = true;
+            InteractionController interactionController = other.GetComponent<InteractionController>();
+            interactionController.AddInteraction(this, Repair);
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
+        if (isWorking) return;
         if (other.tag.ToLower().Equals("player"))
         {
-            isManned = false;
+            InteractionController interactionController = other.GetComponent<InteractionController>();
+            interactionController.RemoveInteraction(this);
         }
     }
 }

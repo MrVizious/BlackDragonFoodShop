@@ -49,7 +49,6 @@ public class Client : StateMachine<ClientState>
 
     private bool _seenStealing = false;
     private PointOfInterest chosenPointOfInterest;
-    private bool isTouchingPlayer = false;
     private AIPath _seeker;
     private AIPath seeker
     {
@@ -71,15 +70,6 @@ public class Client : StateMachine<ClientState>
     }
 
     private EventQueue _eventQueue;
-    private PlayerInput _input;
-    private PlayerInput input
-    {
-        get
-        {
-            if (_input == null) _input = FindObjectOfType<PlayerInput>();
-            return _input;
-        }
-    }
 
     private void Start()
     {
@@ -87,7 +77,6 @@ public class Client : StateMachine<ClientState>
         ChooseNextEvent();
         eventQueue.onQueueEmpty.AddListener(ChooseNextEvent);
         eventQueue.ExecuteNextEvent();
-        input.actions["Interact"].performed += ctx => CatchStealing();
     }
 
     private void Update()
@@ -210,8 +199,13 @@ public class Client : StateMachine<ClientState>
         }
         else if (other.tag.ToLower().Equals("player"))
         {
-            isTouchingPlayer = true;
+            if (seenStealing)
+            {
+                InteractionController interactionController = other.GetComponent<InteractionController>();
+                interactionController.AddInteraction(this, CatchStealing);
+            }
         }
+
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -222,7 +216,11 @@ public class Client : StateMachine<ClientState>
         }
         else if (other.tag.ToLower().Equals("player"))
         {
-            isTouchingPlayer = true;
+            if (seenStealing)
+            {
+                InteractionController interactionController = other.GetComponent<InteractionController>();
+                interactionController.AddInteraction(this, CatchStealing);
+            }
         }
     }
 
@@ -234,7 +232,11 @@ public class Client : StateMachine<ClientState>
         }
         if (other.tag.ToLower().Equals("player"))
         {
-            isTouchingPlayer = false;
+            if (seenStealing)
+            {
+                InteractionController interactionController = other.GetComponent<InteractionController>();
+                interactionController.RemoveInteraction(this);
+            }
         }
     }
 
@@ -247,7 +249,6 @@ public class Client : StateMachine<ClientState>
     public async void CatchStealing()
     {
         if (!seenStealing) return;
-        if (!isTouchingPlayer) return;
         DropItems();
 
         GetComponentInChildren<SpriteRenderer>().color = Color.gray;
