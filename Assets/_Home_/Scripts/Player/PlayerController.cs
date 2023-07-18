@@ -14,11 +14,7 @@ public class PlayerController : StateMachine<PlayerState>
     [Header("Data")]
     public PlayerData playerData;
 
-    [Header("References")]
-    public SpriteRenderer carryItemSpriteRenderer;
 
-    [Header("Current data")]
-    public int currentTrashAmount = 0;
     [HideInInspector] public Rigidbody2D rb { get; private set; }
     [HideInInspector] public Vector2 lastMovementInput = Vector2.zero;
 

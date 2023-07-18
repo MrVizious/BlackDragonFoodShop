@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Sirenix.OdinInspector;
 
 public class InteractionController : MonoBehaviour
 {
@@ -65,13 +66,30 @@ public class InteractionController : MonoBehaviour
             if (interactions[i].behaviour == behaviour)
             {
                 interactions.RemoveAt(i);
-                if (selectedIndex >= interactions.Count)
+                if (selectedIndex >= interactions.Count - 1)
                 {
                     selectedIndex--;
                 }
                 return;
             }
         }
+    }
+
+    [Button]
+    public void ChooseNext(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.started) return;
+        if (interactions.Count < 2) return;
+        selectedIndex = (selectedIndex + 1) % interactions.Count;
+    }
+
+    [Button]
+    public void ChoosePrevious(InputAction.CallbackContext ctx)
+    {
+        if (!ctx.started) return;
+        if (interactions.Count < 2) return;
+        if (selectedIndex == 0) selectedIndex = interactions.Count - 1;
+        else selectedIndex--;
     }
 
     [System.Serializable]

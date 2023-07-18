@@ -21,7 +21,8 @@ public class LevelManager : Singleton<LevelManager>
             if (_rangUpClients == clientsPerLevel) LevelUp();
         }
     }
-    public int maxClientsInStore = 3;
+
+    public int maxClientsInStore = 5;
     public int currentThiefChance
     {
         get => _currentThiefChance;
@@ -64,7 +65,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         maxClientsInStore++;
         clientsPerLevel += maxClientsInStore;
-        currentThiefChance++;
+        currentThiefChance += 5;
         SpawnClient();
     }
 

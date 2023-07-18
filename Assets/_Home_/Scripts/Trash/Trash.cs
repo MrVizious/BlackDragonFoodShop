@@ -10,10 +10,10 @@ public class Trash : MonoBehaviour
     {
         InteractionController interactionController = other.GetComponent<InteractionController>();
         if (interactionController == null) return;
-        PlayerController player = other.GetComponent<PlayerController>();
-        interactionController.AddInteraction(this, () => Pickup(player));
-
+        ItemCarrier itemCarrier = other.GetComponent<ItemCarrier>();
+        interactionController.AddInteraction(this, () => Pickup(itemCarrier));
     }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         InteractionController interactionController = other.GetComponent<InteractionController>();
@@ -21,10 +21,10 @@ public class Trash : MonoBehaviour
         interactionController.RemoveInteraction(this);
     }
 
-    public void Pickup(PlayerController player)
+    public void Pickup(ItemCarrier itemCarrier)
     {
-        if (player == null) return;
-        player.currentTrashAmount++;
+        if (itemCarrier == null) return;
+        itemCarrier.currentTrashAmount++;
         Destroy(gameObject);
     }
 }
