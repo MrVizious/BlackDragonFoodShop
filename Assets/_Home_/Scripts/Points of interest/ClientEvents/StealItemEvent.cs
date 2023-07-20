@@ -6,9 +6,9 @@ using Cysharp.Threading.Tasks;
 
 public class StealItemEvent : ClientEvent
 {
-    private ItemShelf itemShelf
+    private Shelf itemShelf
     {
-        get => (ItemShelf)pointOfInterest;
+        get => (Shelf)pointOfInterest;
     }
 
     public override async UniTask Execute()

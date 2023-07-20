@@ -14,8 +14,17 @@ public class InteractionController : MonoBehaviour
             _selectedIndex = Mathf.Clamp(value, 0, interactions.Count);
             for (int i = 0; i < interactions.Count; i++)
             {
-                if (i == selectedIndex) interactions[i].behaviour.GetComponentInChildren<SpriteRenderer>().material.SetFloat("_Active", 1f);
-                else interactions[i].behaviour.GetComponentInChildren<SpriteRenderer>().material.SetFloat("_Active", 0f);
+                if (i == selectedIndex)
+                {
+                    interactions[i].behaviour.GetComponentInChildren<SpriteRenderer>().material.SetFloat("_Active", 1f);
+                    interactions[i].behaviour.GetComponentInChildren<SpriteRenderer>().sortingOrder = 10;
+
+                }
+                else
+                {
+                    interactions[i].behaviour.GetComponentInChildren<SpriteRenderer>().material.SetFloat("_Active", 0f);
+                    interactions[i].behaviour.GetComponentInChildren<SpriteRenderer>().sortingOrder = 0;
+                }
             }
         }
     }
@@ -64,6 +73,7 @@ public class InteractionController : MonoBehaviour
     public void RemoveInteraction(MonoBehaviour behaviour)
     {
         behaviour.GetComponentInChildren<SpriteRenderer>().material.SetFloat("_Active", 0f);
+        behaviour.GetComponentInChildren<SpriteRenderer>().sortingOrder = 0;
         for (int i = 0; i < interactions.Count; i++)
         {
             if (interactions[i].behaviour == behaviour)

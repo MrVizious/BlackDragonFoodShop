@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-public class ItemShelf : PointOfInterest
+public class Shelf : PointOfInterest
 {
     [Header("Sprites")]
     public ShelfItemLibrary spriteLibrary;
