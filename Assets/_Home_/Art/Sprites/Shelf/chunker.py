@@ -6,7 +6,7 @@ current_directory = os.getcwd()
 
 # Iterate through all files in the directory
 for file_name in os.listdir(current_directory):
-    if file_name.endswith(".png"):
+    if file_name.endswith("estanteria_sprite.png"):
         # Open the image file
         image_path = os.path.join(current_directory, file_name)
         image = Image.open(image_path)
@@ -16,12 +16,14 @@ for file_name in os.listdir(current_directory):
 
         # Calculate the new dimensions including padding and separation
         chunk_size = 16  # Chunk size of 48x48 pixels
-        padding = 4  # Padding of 20 pixels
-        separation = 4  # Separation of 20 pixels
-        new_width = (chunk_size + separation) * \
-            (width // chunk_size) + 2 * padding
-        new_height = (chunk_size + separation) * \
-            (height // chunk_size) + 2 * padding
+        padding_horizontal = 2  # Horizontal padding of 30 pixels
+        padding_vertical = 2  # Vertical padding of 10 pixels
+        separation_horizontal = 0  # Horizontal separation of 20 pixels
+        separation_vertical = 2  # Vertical separation of 5 pixels
+        new_width = (chunk_size + separation_horizontal) * \
+            (width // chunk_size) + 2 * padding_horizontal
+        new_height = (chunk_size + separation_vertical) * \
+            (height // chunk_size) + 2 * padding_vertical
 
         # Create a new image with transparent background
         new_image = Image.new("RGBA", (new_width, new_height), (0, 0, 0, 0))
@@ -33,8 +35,10 @@ for file_name in os.listdir(current_directory):
                 chunk = image.crop((x, y, x + chunk_size, y + chunk_size))
 
                 # Calculate the position of the chunk in the new image
-                new_x = padding + x // chunk_size * (chunk_size + separation)
-                new_y = padding + y // chunk_size * (chunk_size + separation)
+                new_x = padding_horizontal + x // chunk_size * \
+                    (chunk_size + separation_horizontal)
+                new_y = padding_vertical + y // chunk_size * \
+                    (chunk_size + separation_vertical)
 
                 # Paste the chunk onto the new image without resizing
                 new_image.paste(chunk, (new_x, new_y))

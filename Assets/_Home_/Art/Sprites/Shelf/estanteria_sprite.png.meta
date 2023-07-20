@@ -126,12 +126,12 @@ TextureImporter:
       name: estanteria_sprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1
+        y: 22
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4545}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: estanteria_sprite_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1
+        y: 0
+        width: 18
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5454}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,27 +160,6 @@ TextureImporter:
       bones: []
       spriteID: af523ee04f791d24b8ffecd06f859d79
       internalID: 1180715831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: estanteria_sprite_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e2f45a4da6aa8341aefeae8d848eace
-      internalID: -1312391192
       vertices: []
       indices: 
       edges: []
