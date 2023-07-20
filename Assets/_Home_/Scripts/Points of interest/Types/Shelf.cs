@@ -63,7 +63,11 @@ public class Shelf : PointOfInterest
             if (interactionController == null) return;
             ItemCarrier itemCarrier = other.GetComponent<ItemCarrier>();
             if (itemCarrier == null) return;
-            if (!itemCarrier.carryingReplenishment) return;
+            if (!itemCarrier.carryingReplenishment)
+            {
+                interactionController.RemoveInteraction(this);
+                return;
+            }
             if (currentItemCount >= maxItemCount) return;
             interactionController.AddInteraction(this, () => Replenish(itemCarrier));
         }
