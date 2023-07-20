@@ -41,7 +41,10 @@ public class InteractionController : MonoBehaviour
         if (interactions.Count <= 0) return;
         if (selectedIndex < 0 || selectedIndex >= interactions.Count) return;
         interactions[selectedIndex].action.Invoke();
-        RemoveInteraction(interactions[selectedIndex].behaviour);
+        if (selectedIndex < interactions.Count)
+        {
+            RemoveInteraction(interactions[selectedIndex].behaviour);
+        }
         if (selectedIndex >= interactions.Count) selectedIndex--;
     }
 

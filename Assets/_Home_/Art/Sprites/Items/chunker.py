@@ -15,11 +15,13 @@ for file_name in os.listdir(current_directory):
         width, height = image.size
 
         # Calculate the new dimensions including padding and separation
-        chunk_size = 48  # Chunk size of 48x48 pixels
-        padding = 20  # Padding of 20 pixels
-        separation = 20  # Separation of 20 pixels
-        new_width = (chunk_size + separation) * (width // chunk_size) + 2 * padding
-        new_height = (chunk_size + separation) * (height // chunk_size) + 2 * padding
+        chunk_size = 16  # Chunk size of 48x48 pixels
+        padding = 4  # Padding of 20 pixels
+        separation = 4  # Separation of 20 pixels
+        new_width = (chunk_size + separation) * \
+            (width // chunk_size) + 2 * padding
+        new_height = (chunk_size + separation) * \
+            (height // chunk_size) + 2 * padding
 
         # Create a new image with transparent background
         new_image = Image.new("RGBA", (new_width, new_height), (0, 0, 0, 0))

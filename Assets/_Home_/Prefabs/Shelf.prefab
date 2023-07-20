@@ -53,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 5a5ed11f463c57f40b4b585d250d87c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -185,4 +185,5 @@ MonoBehaviour:
   spriteLibrary: {fileID: 11400000, guid: b019dde94be515f4c8bb417364bb1a01, type: 2}
   maxItemCount: 3
   spriteRenderer: {fileID: 295154366237310737}
+  itemIndex: 0
   _currentItemCount: 3
