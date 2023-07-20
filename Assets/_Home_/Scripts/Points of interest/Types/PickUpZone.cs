@@ -9,11 +9,11 @@ public class PickUpZone : PointOfInterest
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        CollisionHappening(other);
+        CollisionHappenning(other);
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        CollisionHappening(other);
+        CollisionHappenning(other);
         if (other.tag.ToLower().Equals("player"))
             Debug.Log("Stay!");
     }
@@ -28,7 +28,7 @@ public class PickUpZone : PointOfInterest
         }
     }
 
-    private void CollisionHappening(Collider2D other)
+    private void CollisionHappenning(Collider2D other)
     {
         if (other.tag.ToLower().Equals("player"))
         {

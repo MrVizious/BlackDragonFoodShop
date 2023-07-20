@@ -62,7 +62,8 @@ public class Cashier : MonoBehaviour
     {
         if (spots[0].client == null) return false;
         //The client is too far away
-        return Vector2.Distance(spots[0].client.transform.position, transform.position) < 1f;
+        return spots[0].client.HasArrivedToDestination();
+        //return Vector2.Distance(spots[0].client.transform.position, transform.position) < 1.5f;
     }
 
     private void UpdateClientsPositions(int latestLeftCustomer = 0)
@@ -92,17 +93,20 @@ public class Cashier : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (spots[0].client == null) return;
-        if (!IsFirstClientAtCounter()) return;
-        if (other.tag.ToLower().Equals("player"))
-        {
-            InteractionController interactionController = other.GetComponent<InteractionController>();
-            interactionController.AddInteraction(spots[0].client, RingUp);
-        }
+        CollisionHappenning(other);
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (spots[0].client == null) return;
+        CollisionHappenning(other);
+    }
+
+    private void CollisionHappenning(Collider2D other)
+    {
+        if (spots[0].client == null)
+        {
+            Debug.Log("There is no client");
+            return;
+        }
         if (!IsFirstClientAtCounter()) return;
         if (other.tag.ToLower().Equals("player"))
         {

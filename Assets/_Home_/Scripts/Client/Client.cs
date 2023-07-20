@@ -69,6 +69,15 @@ public class Client : StateMachine<ClientState>
         }
     }
 
+    private AIPath _aiPath;
+    private AIPath aiPath
+    {
+        get
+        {
+            if (_aiPath == null) _aiPath = GetComponent<AIPath>();
+            return _aiPath;
+        }
+    }
     private EventQueue _eventQueue;
 
     private void Start()
@@ -264,5 +273,11 @@ public class Client : StateMachine<ClientState>
             Instantiate(trashPrefab, transform.position, Quaternion.identity);
         }
         currentNumberOfItems = 0;
+    }
+
+    public bool HasArrivedToDestination()
+    {
+        bool hasArrived = aiPath.reachedDestination;
+        return hasArrived;
     }
 }

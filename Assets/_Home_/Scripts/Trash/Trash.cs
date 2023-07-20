@@ -8,11 +8,11 @@ public class Trash : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        CollisionHappening(other);
+        CollisionHappenning(other);
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        CollisionHappening(other);
+        CollisionHappenning(other);
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -22,7 +22,7 @@ public class Trash : MonoBehaviour
         interactionController.RemoveInteraction(this);
     }
 
-    private void CollisionHappening(Collider2D other)
+    private void CollisionHappenning(Collider2D other)
     {
         if (other.tag.ToLower().Equals("player"))
         {
