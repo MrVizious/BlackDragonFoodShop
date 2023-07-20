@@ -6,7 +6,6 @@ public class ItemCarrier : MonoBehaviour
 {
     [Header("References")]
     public SpriteRenderer carryItemSpriteRenderer;
-    public GameObject dialogueBox;
 
     [Header("Sprites")]
     public Sprite replenishmentSprite;
@@ -20,11 +19,10 @@ public class ItemCarrier : MonoBehaviour
             _currentTrashAmount = value;
             if (currentTrashAmount <= 0)
             {
-                if (carryingReplenishment == false) dialogueBox.SetActive(false);
+                if (carryingReplenishment == false) carryItemSpriteRenderer.sprite = null;
                 return;
             }
 
-            dialogueBox.SetActive(true);
             carryItemSpriteRenderer.sprite = trashSprite;
         }
     }
@@ -36,11 +34,10 @@ public class ItemCarrier : MonoBehaviour
             _carryingReplenishment = value;
             if (carryingReplenishment == false)
             {
-                if (currentTrashAmount <= 0) dialogueBox.SetActive(false);
+                if (currentTrashAmount <= 0) carryItemSpriteRenderer.sprite = null;
                 return;
             }
 
-            dialogueBox.SetActive(true);
             carryItemSpriteRenderer.sprite = replenishmentSprite;
         }
     }

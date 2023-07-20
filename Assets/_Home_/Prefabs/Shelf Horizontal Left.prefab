@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -13204534, guid: 03aec8523ab5268468e306eb7212633c, type: 3}
+    - target: {fileID: 295154366237310737, guid: aa50ffa82f291fe47831aa3f11297973, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1130629697860598627, guid: aa50ffa82f291fe47831aa3f11297973, type: 3}
       propertyPath: m_Name
       value: Shelf Horizontal Left
@@ -83,6 +87,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4607492306704529107, guid: aa50ffa82f291fe47831aa3f11297973, type: 3}
     - {fileID: 9160181482398071414, guid: aa50ffa82f291fe47831aa3f11297973, type: 3}
+    - {fileID: 762050282695416491, guid: aa50ffa82f291fe47831aa3f11297973, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -130,8 +135,8 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.25}
-    oldSize: {x: 1, y: 2}
+    pivot: {x: 0.5, y: 0.264}
+    oldSize: {x: 1.125, y: 2.125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
