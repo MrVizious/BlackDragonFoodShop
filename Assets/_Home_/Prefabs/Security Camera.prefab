@@ -56,7 +56,6 @@ MonoBehaviour:
   notWorkingSprite: {fileID: 21300000, guid: e582d2829fb38704899f153653e6b0af, type: 3}
   workingSprite: {fileID: 21300000, guid: a7a17b7d1e3a7a047af4ae6252fd40f0, type: 3}
   isWorking: 1
-  isManned: 0
 --- !u!61 &6004474465212071332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,7 +281,7 @@ MonoBehaviour:
   resolution: 80
   collideWith:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 512
 --- !u!23 &24366617270485811
 MeshRenderer:
   m_ObjectHideFlags: 0

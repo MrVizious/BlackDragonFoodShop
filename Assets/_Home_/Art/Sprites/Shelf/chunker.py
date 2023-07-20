@@ -6,7 +6,7 @@ current_directory = os.getcwd()
 
 # Iterate through all files in the directory
 for file_name in os.listdir(current_directory):
-    if file_name.endswith("estanteria_sprite.png"):
+    if file_name.endswith("estanteriaHORZ_sprite.png"):
         # Open the image file
         image_path = os.path.join(current_directory, file_name)
         image = Image.open(image_path)

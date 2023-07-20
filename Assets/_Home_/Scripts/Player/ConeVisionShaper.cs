@@ -8,7 +8,6 @@ using Sirenix.OdinInspector;
 public class ConeVisionShaper : MonoBehaviour
 {
     public bool updates = false;
-    public int index = 0;
     public float radius = 1f, totalAngle = 45f;
     // Number of points between the tow main delimiters
     public int resolution = 0;

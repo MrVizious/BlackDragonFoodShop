@@ -129,7 +129,7 @@ TextureImporter:
         x: 3
         y: 3
         width: 18
-        height: 34
+        height: 18
       alignment: 9
       pivot: {x: 0.5, y: 0.264}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,7 +150,7 @@ TextureImporter:
         x: 23
         y: 3
         width: 18
-        height: 34
+        height: 18
       alignment: 9
       pivot: {x: 0.5, y: 0.264}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,7 +171,7 @@ TextureImporter:
         x: 43
         y: 3
         width: 18
-        height: 34
+        height: 18
       alignment: 9
       pivot: {x: 0.5, y: 0.264}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,6 +181,69 @@ TextureImporter:
       bones: []
       spriteID: 849e82284d24f06409a23c5ad57cb216
       internalID: -1478791567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estanteriaHORZ_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 22
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9db430082ba992b468d52ec6a5a445b7
+      internalID: -1935948486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estanteriaHORZ_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 22
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3664c42edc9b70419c31474384b8963
+      internalID: -191162937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: estanteriaHORZ_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 22
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bd9b476590d5f4fb47770d146e5518
+      internalID: -1988776542
       vertices: []
       indices: 
       edges: []

@@ -18,7 +18,7 @@ TagManager:
   - Unmask
   - Client
   - Player
-  - 
+  - Vision Obstacle
   - 
   - 
   - 
@@ -51,17 +51,17 @@ TagManager:
   - name: Trash
     uniqueID: 3038181745
     locked: 0
-  - name: Characters
-    uniqueID: 1118902903
-    locked: 0
-  - name: Overlay
-    uniqueID: 1864199245
-    locked: 0
   - name: Points of Interest
     uniqueID: 3344255621
     locked: 0
+  - name: Characters
+    uniqueID: 1118902903
+    locked: 0
   - name: Items
     uniqueID: 2935667349
+    locked: 0
+  - name: Overlay
+    uniqueID: 1864199245
     locked: 0
   - name: UI
     uniqueID: 1757885909
