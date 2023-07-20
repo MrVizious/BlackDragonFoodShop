@@ -21,10 +21,11 @@ public class DropZone : PointOfInterest
         if (other.tag.ToLower().Equals("player"))
         {
             InteractionController interactionController = other.GetComponent<InteractionController>();
+            if (interactionController == null) return;
             ItemCarrier itemCarrier = other.GetComponent<ItemCarrier>();
-            if (itemCarrier == null || interactionController == null) return;
-            if (itemCarrier.currentTrashAmount <= 0) return;
-            interactionController.AddInteraction(this, () => DropTrash(itemCarrier));
+            if (itemCarrier == null) return;
+            if (itemCarrier.currentTrashAmount <= 0 && itemCarrier.carryingReplenishment == false) return;
+            interactionController.AddInteraction(this, () => Drop(itemCarrier));
         }
     }
 
@@ -38,10 +39,18 @@ public class DropZone : PointOfInterest
         }
     }
 
-    public void DropTrash(ItemCarrier itemCarrier)
+    public void Drop(ItemCarrier itemCarrier)
     {
-        if (itemCarrier.currentTrashAmount <= 0) return;
-        if (itemCarrier.carryingReplenishment) return;
-        itemCarrier.currentTrashAmount = 0;
+        if (itemCarrier.currentTrashAmount <= 0 && !itemCarrier.carryingReplenishment) return;
+        if (itemCarrier.carryingReplenishment)
+        {
+            itemCarrier.carryingReplenishment = false;
+            return;
+        }
+        if (itemCarrier.currentTrashAmount > 0)
+        {
+            itemCarrier.currentTrashAmount = 0;
+            return;
+        }
     }
 }

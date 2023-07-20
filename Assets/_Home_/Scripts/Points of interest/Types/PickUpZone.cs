@@ -14,6 +14,8 @@ public class PickUpZone : PointOfInterest
     private void OnTriggerStay2D(Collider2D other)
     {
         CollisionHappening(other);
+        if (other.tag.ToLower().Equals("player"))
+            Debug.Log("Stay!");
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -31,8 +33,10 @@ public class PickUpZone : PointOfInterest
         if (other.tag.ToLower().Equals("player"))
         {
             InteractionController interactionController = other.GetComponent<InteractionController>();
+            if (interactionController == null) return;
             ItemCarrier itemCarrier = other.GetComponent<ItemCarrier>();
-            if (itemCarrier == null || interactionController == null) return;
+            if (itemCarrier == null) return;
+            if (itemCarrier.currentTrashAmount > 0) return;
             if (itemCarrier.carryingReplenishment) return;
             interactionController.AddInteraction(this, () => PickUpReplenishment(itemCarrier));
         }
