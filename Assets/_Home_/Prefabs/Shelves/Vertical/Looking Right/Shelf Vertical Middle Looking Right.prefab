@@ -12,13 +12,25 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 109644764291775550, guid: f40134e96340d7341800a6105373e476, type: 3}
+      propertyPath: m_Size.x
+      value: 1.5114944
+      objectReference: {fileID: 0}
+    - target: {fileID: 109644764291775550, guid: f40134e96340d7341800a6105373e476, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.738227
+      objectReference: {fileID: 0}
+    - target: {fileID: 109644764291775550, guid: f40134e96340d7341800a6105373e476, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 449019773741952337, guid: f40134e96340d7341800a6105373e476, type: 3}
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 978242056717986083, guid: f40134e96340d7341800a6105373e476, type: 3}
       propertyPath: m_Name
-      value: Shelf Vertical Middle_03 Variant
+      value: Shelf Vertical Middle Looking Right
       objectReference: {fileID: 0}
     - target: {fileID: 1485995633897339313, guid: f40134e96340d7341800a6105373e476, type: 3}
       propertyPath: m_Points.Array.data[0].x

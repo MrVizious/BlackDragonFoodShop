@@ -48,14 +48,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Trash
-    uniqueID: 3038181745
-    locked: 0
   - name: Points of Interest
     uniqueID: 3344255621
     locked: 0
   - name: Characters
     uniqueID: 1118902903
+    locked: 0
+  - name: Trash
+    uniqueID: 3038181745
     locked: 0
   - name: Items
     uniqueID: 2935667349

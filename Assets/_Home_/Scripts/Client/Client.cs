@@ -7,14 +7,16 @@ using ExtensionMethods;
 using UnityEngine.U2D.Animation;
 using Pathfinding;
 using RuntimeSet;
-using UnityEngine.InputSystem;
 using Cysharp.Threading.Tasks;
+using UnityEngine.Events;
 
 public class Client : StateMachine<ClientState>
 {
     public bool isSeen = false;
     public bool isThief = false;
     public Trash trashPrefab;
+    public UnityEvent onClientExit = new UnityEvent();
+    public UnityEvent onSpawn = new UnityEvent();
     public bool seenStealing
     {
         get => _seenStealing;
@@ -86,6 +88,7 @@ public class Client : StateMachine<ClientState>
         ChooseNextEvent();
         eventQueue.onQueueEmpty.AddListener(ChooseNextEvent);
         eventQueue.ExecuteNextEvent();
+        onSpawn.Invoke();
     }
 
     private void Update()
@@ -197,6 +200,7 @@ public class Client : StateMachine<ClientState>
         leaveEvent.client = this;
         eventQueue.AddEvent(leaveEvent);
         eventQueue.ExecuteNextEvent();
+        eventQueue.currentEvent.onEnded.AddListener(() => onClientExit.Invoke());
     }
 
 

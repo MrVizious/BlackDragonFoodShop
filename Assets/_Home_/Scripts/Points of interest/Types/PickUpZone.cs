@@ -14,8 +14,6 @@ public class PickUpZone : PointOfInterest
     private void OnTriggerStay2D(Collider2D other)
     {
         CollisionHappenning(other);
-        if (other.tag.ToLower().Equals("player"))
-            Debug.Log("Stay!");
     }
 
     private void OnTriggerExit2D(Collider2D other)

@@ -107,7 +107,6 @@ public class Cashier : MonoBehaviour
     {
         if (spots[0].client == null)
         {
-            Debug.Log("There is no client");
             return;
         }
         if (!IsFirstClientAtCounter()) return;
