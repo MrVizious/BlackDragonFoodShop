@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using Sirenix.OdinInspector;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Collider2D))]
 public class Cashier : MonoBehaviour
 {
     public List<Spot> spots = new List<Spot>();
+    public UnityEvent onRangUp = new UnityEvent();
 
     public Transform GetFreeSpot(Client client)
     {
@@ -56,6 +58,7 @@ public class Cashier : MonoBehaviour
 
         client.LeaveStore();
         UpdateClientsPositions();
+        onRangUp.Invoke();
     }
 
     private bool IsFirstClientAtCounter()
