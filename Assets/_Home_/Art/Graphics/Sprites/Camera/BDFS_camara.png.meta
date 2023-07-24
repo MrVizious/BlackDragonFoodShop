@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03aec8523ab5268468e306eb7212633c
+guid: 9826ea5285cba4d4eb0666ca8895eb09
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: left
+      name: Camera_Right_Working
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8425b250a78cc9f4e936eb12bdbf3772
+      internalID: -1980389761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camera_Right_Not_Working
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 54
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3479e1c0413eb34ab9d081d6d149577
+      internalID: 1357940325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camera_Down_Working
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831f217147e06ca4f988cfd27270e2ac
+      internalID: 429507168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camera_Down_Not_Working
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 36
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 702592028fc3cf045b42eba8e79c9479
+      internalID: 1506418740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camera_Up_Working
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6c2127f3132e94ab4fff80a994942b
+      internalID: -352582489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camera_Up_Not_Working
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 18
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9bfb28757d0f614a9cb71f2c4c95aa7
+      internalID: 214138913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camera_Left_Working
       rect:
         serializedVersion: 2
         x: 0
@@ -137,35 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 757006ba383220f45b58011139d65c27
-      internalID: -13204534
+      spriteID: 2414cffb26364214c96840cb26495ee8
+      internalID: -1246405354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: center
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 0
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6b8fc6dee844da4d8bdeaac06145206
-      internalID: 838960829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: right
+      name: Camera_Left_Not_Working
       rect:
         serializedVersion: 2
         x: 36
@@ -179,71 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 849e82284d24f06409a23c5ad57cb216
-      internalID: -1478791567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: estanteriaHORZ_sprite_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 18
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9db430082ba992b468d52ec6a5a445b7
-      internalID: -1935948486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: estanteriaHORZ_sprite_1
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 18
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3664c42edc9b70419c31474384b8963
-      internalID: -191162937
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: estanteriaHORZ_sprite_2
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 18
-        width: 18
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13bd9b476590d5f4fb47770d146e5518
-      internalID: -1988776542
+      spriteID: b05789d1d10275d47ac79216a6dfb8b6
+      internalID: 1019212035
       vertices: []
       indices: 
       edges: []
@@ -259,12 +301,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      center: 838960829
-      estanteriaHORZ_sprite_0: -1935948486
-      estanteriaHORZ_sprite_1: -191162937
-      estanteriaHORZ_sprite_2: -1988776542
-      left: -13204534
-      right: -1478791567
+      BDFS_camara_1: 1252756004
+      BDFS_camara_11: -1298838286
+      BDFS_camara_13: -1605371088
+      BDFS_camara_15: -1097490659
+      BDFS_camara_3: -1636687318
+      BDFS_camara_5: -1548086838
+      BDFS_camara_7: -1391318513
+      BDFS_camara_9: -1261613535
+      Camera_Down_Not_Working: 1506418740
+      Camera_Down_Working: 429507168
+      Camera_Left_Not_Working: 1019212035
+      Camera_Left_Working: -1246405354
+      Camera_Right_Not_Working: 1357940325
+      Camera_Right_Working: -1980389761
+      Camera_Up_Not_Working: 214138913
+      Camera_Up_Working: -352582489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

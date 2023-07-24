@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6485010870976427594}
   - component: {fileID: 6004474465212071332}
   m_Layer: 0
-  m_Name: Security Camera
+  m_Name: Security Camera Up
   m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,15 +25,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431539685478985713}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.98, y: 4.93, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6027211763843657478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6485010870976427594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,8 +53,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   possibleEventsData: {fileID: 11400000, guid: cdae6d081cb7bab48a4164ea594e3beb, type: 2}
-  notWorkingSprite: {fileID: 21300000, guid: e582d2829fb38704899f153653e6b0af, type: 3}
-  workingSprite: {fileID: 21300000, guid: a7a17b7d1e3a7a047af4ae6252fd40f0, type: 3}
+  notWorkingSprite: {fileID: 214138913, guid: 9826ea5285cba4d4eb0666ca8895eb09, type: 3}
+  workingSprite: {fileID: -352582489, guid: 9826ea5285cba4d4eb0666ca8895eb09, type: 3}
   isWorking: 1
 --- !u!61 &6004474465212071332
 BoxCollider2D:
@@ -88,7 +88,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.8372655}
+  m_Offset: {x: 0, y: -1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -99,7 +99,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7873621}
+  m_Size: {x: 1, y: 2}
   m_EdgeRadius: 0
 --- !u!1 &4177629303361006267
 GameObject:
@@ -126,7 +126,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4177629303361006267}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -154,7 +154,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3e9c9e620486ff479580ebc54344949, type: 2}
+  - {fileID: 2100000, guid: 5a5ed11f463c57f40b4b585d250d87c3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -172,10 +172,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -950711675
-  m_SortingLayer: 4
+  m_SortingLayerID: -725682501
+  m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a7a17b7d1e3a7a047af4ae6252fd40f0, type: 3}
+  m_Sprite: {fileID: -352582489, guid: 9826ea5285cba4d4eb0666ca8895eb09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -275,7 +275,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   updates: 0
-  index: 0
   radius: 5
   totalAngle: 60
   resolution: 80

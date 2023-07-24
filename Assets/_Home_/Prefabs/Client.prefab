@@ -132,7 +132,7 @@ MonoBehaviour:
   maxAcceleration: -2.5
   rotationSpeed: 360
   slowdownDistance: 0.6
-  pickNextWaypointDist: 0.4
+  pickNextWaypointDist: 0.2
   endReachedDistance: 0.5
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
@@ -184,9 +184,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
+  m_Offset: {x: 0, y: -0.27}
   serializedVersion: 2
-  m_Radius: 0.52
+  m_Radius: 0.32
 --- !u!114 &7915682108798263250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1118902903
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 738737497, guid: 4a0c8cf7527e1154aaca61fc773cec27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -406,7 +406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1008037687713992669
 Transform:
   m_ObjectHideFlags: 0
@@ -454,9 +454,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.054450452}
-  m_Size: {x: 0.71780145, y: 1.0155574}
-  m_Direction: 0
+  m_Offset: {x: -0.021577714, y: -0.21927002}
+  m_Size: {x: 0.7351797, y: 0.5779415}
+  m_Direction: 1
 --- !u!1 &3183663388390767100
 GameObject:
   m_ObjectHideFlags: 0
