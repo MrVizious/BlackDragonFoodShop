@@ -8,8 +8,9 @@ using Sirenix.OdinInspector;
 public class FailCounter : MonoBehaviour
 {
     public int maxFailPoints = 10;
-    public Image stolenItemsImage, unsatisfiedClientsImage, trashPointsImage;
+    public FailPointImage stolenItemsImage, unsatisfiedClientsImage, trashPointsImage;
     [SerializeField]
+    [Range(0, 10)]
     [OnValueChanged("UpdateGraphics")]
     private int _stolenItems = 0;
     public int stolenItems
@@ -19,9 +20,11 @@ public class FailCounter : MonoBehaviour
         {
             value = Mathf.Max(0, value);
             _stolenItems = value;
+            UpdateGraphics();
         }
     }
     [SerializeField]
+    [Range(0, 10)]
     [OnValueChanged("UpdateGraphics")]
     private int _unsatisfiedClients = 0;
     public int unsatisfiedClients
@@ -31,9 +34,11 @@ public class FailCounter : MonoBehaviour
         {
             value = Mathf.Max(0, value);
             _unsatisfiedClients = value;
+            UpdateGraphics();
         }
     }
     [SerializeField]
+    [Range(0, 10)]
     [OnValueChanged("UpdateGraphics")]
     private float _trashPoints = 0;
     public float trashPoints
@@ -43,6 +48,7 @@ public class FailCounter : MonoBehaviour
         {
             value = Mathf.Max(0, value);
             _trashPoints = value;
+            UpdateGraphics();
         }
     }
 
@@ -50,15 +56,13 @@ public class FailCounter : MonoBehaviour
     public void UpdateGraphics()
     {
         // Stolen items
-        stolenItemsImage.rectTransform.localScale = new Vector2(stolenItems, 1f);
+        stolenItemsImage.SetPositionAndScale(0f, stolenItems);
 
         // Unsatisfied clients
-        unsatisfiedClientsImage.rectTransform.anchoredPosition = new Vector2(stolenItems + 0.5f, 0f);
-        unsatisfiedClientsImage.rectTransform.localScale = new Vector2(unsatisfiedClients, 1f);
+        unsatisfiedClientsImage.SetPositionAndScale(stolenItems, unsatisfiedClients);
 
         // Trash points
-        trashPointsImage.rectTransform.anchoredPosition = new Vector2(stolenItems + unsatisfiedClients + 0.5f, 0f);
-        trashPointsImage.rectTransform.localScale = new Vector2(trashPoints, 1f);
+        trashPointsImage.SetPositionAndScale(stolenItems + unsatisfiedClients, trashPoints);
     }
 
     private void Start()
