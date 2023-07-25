@@ -1,15 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using DesignPatterns;
 using Sirenix.OdinInspector;
 using UtilityMethods;
 using Cysharp.Threading.Tasks;
+using GameEvents;
 
 public class LevelManager : Singleton<LevelManager>
 {
     public GameObject clientPrefab;
-    public int points = 0;
+    public GameEventString onScoreChanged;
+    public int points
+    {
+        get => _points;
+        set
+        {
+            value = Mathf.Max(0, value);
+            _points = value;
+            onScoreChanged.Raise(" €" + points);
+        }
+    }
     public int stolenItems = 0;
     public int unsatisfiedClients = 0;
     public int rangUpClients
@@ -35,6 +47,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private int clientsPerLevel;
     private int _rangUpClients;
+    private int _points = 0;
     public int _currentThiefChance = 20;
     protected override bool dontDestroyOnLoad
     {
@@ -54,10 +67,12 @@ public class LevelManager : Singleton<LevelManager>
     private async void Start()
     {
         clientsPerLevel = maxClientsInStore;
+        List<bool> initialClientsThiefList = Enumerable.Repeat(false, maxClientsInStore).ToList();
+        initialClientsThiefList[Random.Range(0, initialClientsThiefList.Count)] = true;
         for (int i = 0; i < maxClientsInStore; i++)
         {
-            SpawnClient();
-            await UniTask.Delay(800);
+            SpawnSpecificClient(initialClientsThiefList[i]);
+            await UniTask.Delay(Random.Range(1500, 3000));
         }
     }
 
@@ -65,15 +80,32 @@ public class LevelManager : Singleton<LevelManager>
     {
         maxClientsInStore++;
         clientsPerLevel += maxClientsInStore;
-        currentThiefChance += 5;
-        SpawnClient();
+        currentThiefChance += 3;
+        SpawnRandomClient();
+    }
+
+    [Button]
+    public void SpawnRandomClient()
+    {
+        bool isThief = Math.ProbabilityCheck(maxThiefChance);
+        SpawnSpecificClient(isThief);
     }
 
     [Button]
     public void SpawnClient()
     {
+        SpawnSpecificClient(false);
+    }
+
+    [Button]
+    public void SpawnThief()
+    {
+        SpawnSpecificClient(true);
+    }
+
+    private void SpawnSpecificClient(bool isThief)
+    {
         Client newClient = Instantiate(clientPrefab, door.position, Quaternion.identity, transform).GetComponent<Client>();
-        bool isThief = Math.ProbabilityCheck(maxThiefChance);
         newClient.isThief = isThief;
     }
 

@@ -29,7 +29,7 @@ public class LeaveEvent : ClientEvent
         {
             LevelManager.Instance.stolenItems += client.currentNumberOfItems;
         }
-        UtilityMethods.UniTaskMethods.DelayedFunction(() => LevelManager.Instance.SpawnClient(), 1f).AttachExternalCancellation(this.GetCancellationTokenOnDestroy()).Forget();
+        UtilityMethods.UniTaskMethods.DelayedFunction(() => LevelManager.Instance.SpawnRandomClient(), 1f).AttachExternalCancellation(this.GetCancellationTokenOnDestroy()).Forget();
         Destroy(client.gameObject);
         base.End();
     }
