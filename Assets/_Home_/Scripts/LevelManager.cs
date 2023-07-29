@@ -7,11 +7,42 @@ using Sirenix.OdinInspector;
 using UtilityMethods;
 using Cysharp.Threading.Tasks;
 using GameEvents;
+using UnityEngine.Events;
 
 public class LevelManager : Singleton<LevelManager>
 {
     public GameObject clientPrefab;
     public GameEventString onScoreChanged;
+
+    public int maxClientsInStore = 5;
+    public int maxThiefChance = 45;
+
+    public int stolenItems
+    {
+        get => failCounter.stolenItems;
+        set
+        {
+            failCounter.stolenItems = value;
+        }
+    }
+    public int unsatisfiedClients
+    {
+        get => failCounter.unsatisfiedClients;
+        set
+        {
+            failCounter.unsatisfiedClients = value;
+        }
+    }
+    public float trashPoints
+    {
+        get => failCounter.trashPoints;
+        set
+        {
+            failCounter.trashPoints = value;
+        }
+    }
+
+
     public int points
     {
         get => _points;
@@ -22,8 +53,6 @@ public class LevelManager : Singleton<LevelManager>
             onScoreChanged.Raise(" €" + points);
         }
     }
-    public int stolenItems = 0;
-    public int unsatisfiedClients = 0;
     public int rangUpClients
     {
         get => _rangUpClients;
@@ -34,7 +63,6 @@ public class LevelManager : Singleton<LevelManager>
         }
     }
 
-    public int maxClientsInStore = 5;
     public int currentThiefChance
     {
         get => _currentThiefChance;
@@ -43,8 +71,16 @@ public class LevelManager : Singleton<LevelManager>
             _currentThiefChance = Mathf.Min(value, maxThiefChance);
         }
     }
-    public int maxThiefChance = 45;
 
+    private FailCounter _failCounter;
+    private FailCounter failCounter
+    {
+        get
+        {
+            if (_failCounter == null) _failCounter = FindObjectOfType<FailCounter>();
+            return _failCounter;
+        }
+    }
     private int clientsPerLevel;
     private int _rangUpClients;
     private int _points = 0;

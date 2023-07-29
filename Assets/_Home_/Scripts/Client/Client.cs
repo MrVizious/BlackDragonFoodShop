@@ -16,6 +16,7 @@ public class Client : StateMachine<ClientState>
     public bool isThief = false;
     public Trash trashPrefab;
     public UnityEvent onClientExit = new UnityEvent();
+    public UnityEvent onThiefExitWithItems = new UnityEvent();
     public UnityEvent onSpawn = new UnityEvent();
     public bool seenStealing
     {
@@ -200,9 +201,14 @@ public class Client : StateMachine<ClientState>
         leaveEvent.client = this;
         eventQueue.AddEvent(leaveEvent);
         eventQueue.ExecuteNextEvent();
-        eventQueue.currentEvent.onEnded.AddListener(() => onClientExit.Invoke());
+        eventQueue.currentEvent.onEnded.AddListener(OnClientExit);
     }
 
+    private void OnClientExit()
+    {
+        if (isThief && currentNumberOfItems > 0) onThiefExitWithItems.Invoke();
+        else onClientExit.Invoke();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

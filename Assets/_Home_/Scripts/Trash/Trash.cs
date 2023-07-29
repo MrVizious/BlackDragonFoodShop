@@ -6,6 +6,25 @@ using UnityEngine.InputSystem;
 public class Trash : MonoBehaviour
 {
 
+    public float secondsUntilMaximumAnnoyance = 3f;
+    private float _accumulatedAnnoyance = 0f;
+    private float accumulatedAnnoyance
+    {
+        get => _accumulatedAnnoyance;
+        set
+        {
+            value = Mathf.Clamp01(value);
+            _accumulatedAnnoyance = value;
+        }
+    }
+    private void Update()
+    {
+        if (accumulatedAnnoyance >= 1f) return;
+        float addedAmount = Time.deltaTime * 1f / secondsUntilMaximumAnnoyance;
+        LevelManager.Instance.trashPoints -= accumulatedAnnoyance;
+        accumulatedAnnoyance += addedAmount;
+        LevelManager.Instance.trashPoints += accumulatedAnnoyance;
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         CollisionHappenning(other);
@@ -40,5 +59,10 @@ public class Trash : MonoBehaviour
         if (itemCarrier == null) return;
         itemCarrier.currentTrashAmount++;
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        LevelManager.Instance.trashPoints -= accumulatedAnnoyance;
     }
 }
