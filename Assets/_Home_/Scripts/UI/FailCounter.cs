@@ -67,6 +67,9 @@ public class FailCounter : MonoBehaviour
 
     private void Start()
     {
+        stolenItems = 0;
+        unsatisfiedClients = 0;
+        trashPoints = 0f;
         UpdateGraphics();
     }
 }

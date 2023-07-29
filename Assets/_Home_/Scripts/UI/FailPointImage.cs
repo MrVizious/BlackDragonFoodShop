@@ -11,54 +11,73 @@ public class FailPointImage : MonoBehaviour
     public Image backgroundImage;
     public Sprite logoSprite;
     public MMF_Player scalePlayer, positionPlayer;
+    private float _currentScale = 0f, _currentPosition = 0f;
+    private float currentScale
+    {
+        get => _currentScale;
+        set
+        {
+            value = Mathf.Max(0f, value);
+            if (value == _currentScale) return;
+            _currentScale = value;
+            SetScale(currentScale);
+        }
+    }
+    private float currentPosition
+    {
+        get => _currentPosition;
+        set
+        {
+            value = Mathf.Max(0f, value);
+            if (value == _currentPosition) return;
+            Debug.Log("Value: " + value + ", currentPosition: " + currentPosition);
+            SetPosition(value, currentPosition);
+            _currentPosition = value;
+        }
+    }
 
     [Button]
-    public void SetPosition(float newPosition)
+    public void SetPosition(float newPosition, float oldPosition = 0f)
     {
-        if (backgroundImage.rectTransform.anchoredPosition.x == newPosition) return;
-        if (positionPlayer == null)
-        {
-            Debug.Log("No position player", this);
-            return;
-        }
-        backgroundImage.rectTransform.anchoredPosition = new Vector2(newPosition, 0f);
         MMF_Position positionFeedback = positionPlayer.GetFeedbackOfType<MMF_Position>();
-        positionFeedback.InitialPosition = new Vector3(backgroundImage.rectTransform.anchoredPosition.x, 0f, 0f);
-        positionFeedback.DestinationPosition = new Vector3(newPosition, 0f, 0f);
+        positionFeedback.Stop(Vector3.zero);
 
-        scalePlayer.PlayFeedbacks();
+        positionFeedback.RemapCurveZero = oldPosition;
+        positionFeedback.RemapCurveOne = newPosition;
+
+        positionPlayer.PlayFeedbacks();
     }
 
     [Button]
     public void SetScale(float newScale)
     {
-        if (backgroundImage.rectTransform.localScale.x == newScale) return;
         if (scalePlayer == null)
         {
-            Debug.Log("No scale player", this);
+            backgroundImage.rectTransform.localScale = new Vector2(newScale, 1f);
             return;
         }
         MMF_Scale scaleFeedback = scalePlayer.GetFeedbackOfType<MMF_Scale>();
-        scaleFeedback.RemapCurveZero = backgroundImage.rectTransform.localScale.x;
-        scaleFeedback.RemapCurveOne = newScale;
+        scaleFeedback.Stop(Vector3.zero);
+
+        scaleFeedback.DestinationScale = new Vector2(newScale, 1f);
 
         scalePlayer.PlayFeedbacks();
     }
 
     public void SetPositionAndScale(float newPosition, float newScale)
     {
-        SetPosition(newPosition);
-        SetScale(newScale);
+        currentPosition = newPosition;
+        currentScale = newScale;
     }
 
     [Button]
     public void AddToScale(float addition = 1f)
     {
-        SetScale(backgroundImage.rectTransform.localScale.x + addition);
+        currentScale++;
     }
     [Button]
     public void AddToPosition(float addition = 1f)
     {
-        SetPosition(backgroundImage.rectTransform.anchoredPosition.x + addition);
+        currentPosition++;
     }
 }
