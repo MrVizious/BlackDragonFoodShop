@@ -7443,6 +7443,7 @@ MonoBehaviour:
     SerializationNodes: []
   clientPrefab: {fileID: 421049109293118546, guid: 49c1a8162f30d52469e6f5bdb100579d, type: 3}
   onScoreChanged: {fileID: 11400000, guid: 6a420bae54d58e84184a7d719067fa9e, type: 2}
+  playerData: {fileID: 11400000, guid: 29209cd8493b70e46bee05a92f71e160, type: 2}
   maxClientsInStore: 4
   maxThiefChance: 45
   _currentThiefChance: 20

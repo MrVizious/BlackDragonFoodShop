@@ -98,7 +98,7 @@ public class Client : StateMachine<ClientState>
     private void Update()
     {
         UpdateAnimation();
-        if (Time.frameCount % 15 != 0) return null;
+        if (Time.frameCount % 15 != 0) return;
         if (eventQueue.currentEvent == null && eventQueue.nextEvents.Count == 0)
         {
             noEventCounter++;

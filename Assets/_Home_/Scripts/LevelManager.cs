@@ -13,6 +13,7 @@ public class LevelManager : Singleton<LevelManager>
 {
     public GameObject clientPrefab;
     public GameEventString onScoreChanged;
+    public PlayerData playerData;
 
     public int maxClientsInStore = 5;
     public int maxThiefChance = 45;
@@ -105,6 +106,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private async void Start()
     {
+        playerData.moneyEarned = 0;
         clientsPerLevel = maxClientsInStore;
         List<bool> initialClientsThiefList = Enumerable.Repeat(false, maxClientsInStore).ToList();
         initialClientsThiefList[Random.Range(0, initialClientsThiefList.Count)] = true;
@@ -153,6 +155,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         if (trashPoints + unsatisfiedClients + stolenItems + Mathf.Epsilon >= 9.975f)
         {
+            playerData.moneyEarned = points;
             SceneController.Instance.GoToMainMenu();
         }
     }
