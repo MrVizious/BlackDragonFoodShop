@@ -11,6 +11,13 @@ public class SceneController : Singleton<SceneController>
     private string nextScene;
 
     [Button]
+    public void GoToEndScene()
+    {
+        nextScene = "EndScene";
+        Animator transitionAnimator = GetComponent<Animator>();
+        transitionAnimator.Play("SceneOutTransition");
+    }
+    [Button]
     public void GoToMainMenu()
     {
         nextScene = "MainMenu";

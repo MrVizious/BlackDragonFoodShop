@@ -17,6 +17,7 @@ public class RenderTextureToImage : MonoBehaviour
     void Update()
     {
         image.texture = ToTexture2D(renderTexture);
+        Debug.Log("Hey");
     }
 
     private Texture2D ToTexture2D(RenderTexture rTex)
@@ -30,15 +31,24 @@ public class RenderTextureToImage : MonoBehaviour
         int height = tex.height;
         Color empty = new Color(1, 1, 1, 0);
 
+#if !UNITY_WEBGL
         // Use Parallel.For for parallel execution
         Parallel.For(0, width, x =>
+#else
+        for (int x = 0; x < height; x++)
+#endif
         {
             for (int y = 0; y < height; y++)
             {
                 if (currentPixels[x + y * width] != Color.white)
                     currentPixels[x + y * width] = empty;
             }
-        });
+        }
+
+#if !UNITY_WEBGL
+        )
+#endif
+        ;
 
         tex.SetPixels(currentPixels);
         tex.Apply();

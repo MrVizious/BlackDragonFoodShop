@@ -3657,7 +3657,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527623311}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -3665,10 +3665,10 @@ RectTransform:
   m_Father: {fileID: 79371138}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 19.2, y: 10.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &527623313
 MonoBehaviour:
@@ -3695,7 +3695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f752d3a51152f4e44a3ebe45ae24abcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FitTarget: {fileID: 0}
+  m_FitTarget: {fileID: 848168032}
   m_FitOnLateUpdate: 0
   m_OnlyForChildren: 0
   m_ShowUnmaskGraphic: 0
@@ -3712,15 +3712,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 8144afb1017721246b3cc1eeef5cd7f2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 8400000, guid: fb544a93a4c45fd4ca0811c2ba3f1f77, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -7441,7 +7441,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  clientPrefab: {fileID: 421049109293118546, guid: 49c1a8162f30d52469e6f5bdb100579d, type: 3}
+  clientPrefab: {fileID: 3755288987034971707, guid: 49c1a8162f30d52469e6f5bdb100579d, type: 3}
   onScoreChanged: {fileID: 11400000, guid: 6a420bae54d58e84184a7d719067fa9e, type: 2}
   playerData: {fileID: 11400000, guid: 29209cd8493b70e46bee05a92f71e160, type: 2}
   maxClientsInStore: 4

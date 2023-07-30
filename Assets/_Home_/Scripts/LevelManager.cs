@@ -156,7 +156,7 @@ public class LevelManager : Singleton<LevelManager>
         if (trashPoints + unsatisfiedClients + stolenItems + Mathf.Epsilon >= 9.975f)
         {
             playerData.moneyEarned = points;
-            SceneController.Instance.GoToMainMenu();
+            SceneController.Instance.GoToEndScene();
         }
     }
 }
