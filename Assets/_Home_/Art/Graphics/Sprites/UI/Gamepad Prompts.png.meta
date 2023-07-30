@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 5afab1aec1c6a034b90afdd19741076f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: XBox_a_up_green
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 159
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad4c727bac478254c80cb362e2434b46
+      internalID: 1279188938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XBox_a_down_green
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 159
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31310c01527c4ee489da11d3e37e7d3c
+      internalID: -970222540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XBox_a_up_grey
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 159
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25b914758727714ab2b8177cb87fc5f
+      internalID: 2015542767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: XBox_a_down_grey
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 159
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647c06b1b5ddd0e4388dc0eb6384cef7
+      internalID: -825970276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PS4_x_up
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 96
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733b53bca07395546a88bb12b8a2f364
+      internalID: 2033917540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PS4_x_down
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 96
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67779254dc439c49abe71096709ee14
+      internalID: 1787152806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_UL
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 59
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82771b974309cf4488795e31f021880d
+      internalID: 772190139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_U
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 59
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84de4ce11fdb4c342b7f8db3656be00a
+      internalID: 1936314781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_UR
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 59
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a5c8a9cd1f59246b6def453ec49a90
+      internalID: -1255100105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_ML
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 43
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d24a54a0f6f5a40afb03dde051128f
+      internalID: -71446603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_M
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 43
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3804b95e0ad28ff4795b4997ac55ef8b
+      internalID: 127462294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_MR
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 43
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f644b5e7d32f0644790879b1af632294
+      internalID: 596878503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_LL
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 28
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2e3668a70e6534ab8e669ff2b2163b
+      internalID: 1503504952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_L
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 28
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a1a2f610242fe849aa0ba095739133d
+      internalID: -2116225675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Joystick_LR
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 28
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc8d41ed81925e489566e6d73cb2e4e
+      internalID: 203927556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Generic_up
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 26
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb2e7dc531c64c48b71ca21740ebbfc
+      internalID: 183062924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Gamepad Prompts_0: -1832448625
+      Gamepad Prompts_10: 1618496067
+      Gamepad Prompts_100: -1257166744
+      Gamepad Prompts_101: -2106626622
+      Gamepad Prompts_102: -413439141
+      Gamepad Prompts_103: -1108084561
+      Gamepad Prompts_104: 181566792
+      Gamepad Prompts_105: -1559256807
+      Gamepad Prompts_106: 1660236028
+      Gamepad Prompts_107: 1736966359
+      Gamepad Prompts_108: 539325436
+      Gamepad Prompts_109: 1850141584
+      Gamepad Prompts_11: -2119848787
+      Gamepad Prompts_110: 2066986800
+      Gamepad Prompts_111: 705552085
+      Gamepad Prompts_112: 1088773108
+      Gamepad Prompts_113: 184481321
+      Gamepad Prompts_114: -991281486
+      Gamepad Prompts_115: 1028308176
+      Gamepad Prompts_116: -252893122
+      Gamepad Prompts_117: 157995298
+      Gamepad Prompts_118: -1089585514
+      Gamepad Prompts_119: 1385139798
+      Gamepad Prompts_12: -249750775
+      Gamepad Prompts_120: 1130268735
+      Gamepad Prompts_121: 632996621
+      Gamepad Prompts_122: 2062367160
+      Gamepad Prompts_123: -1539981065
+      Gamepad Prompts_124: -1043233135
+      Gamepad Prompts_125: 1539700504
+      Gamepad Prompts_126: 108668851
+      Gamepad Prompts_127: -1815736153
+      Gamepad Prompts_128: -2110912303
+      Gamepad Prompts_129: 1365392090
+      Gamepad Prompts_13: 311292390
+      Gamepad Prompts_130: -1364562779
+      Gamepad Prompts_131: -2129097845
+      Gamepad Prompts_132: -2106419575
+      Gamepad Prompts_133: -1217957890
+      Gamepad Prompts_134: 575072561
+      Gamepad Prompts_135: -874459770
+      Gamepad Prompts_136: 1028251904
+      Gamepad Prompts_137: 1826161180
+      Gamepad Prompts_138: 539152853
+      Gamepad Prompts_139: 404562684
+      Gamepad Prompts_14: -2074532114
+      Gamepad Prompts_140: 529943366
+      Gamepad Prompts_141: 1795515314
+      Gamepad Prompts_142: -1209998602
+      Gamepad Prompts_143: -1284676057
+      Gamepad Prompts_144: -1331450758
+      Gamepad Prompts_146: 196087627
+      Gamepad Prompts_147: 230437968
+      Gamepad Prompts_148: -2070023018
+      Gamepad Prompts_149: -118378678
+      Gamepad Prompts_15: 594501127
+      Gamepad Prompts_150: 138040265
+      Gamepad Prompts_151: -1944160969
+      Gamepad Prompts_152: 19979691
+      Gamepad Prompts_153: 169758127
+      Gamepad Prompts_154: -270564651
+      Gamepad Prompts_155: -2071181262
+      Gamepad Prompts_156: 364773319
+      Gamepad Prompts_157: -1377009487
+      Gamepad Prompts_158: -1336394161
+      Gamepad Prompts_159: 310985068
+      Gamepad Prompts_16: -351935838
+      Gamepad Prompts_160: -493192735
+      Gamepad Prompts_161: 37979240
+      Gamepad Prompts_162: -1937012640
+      Gamepad Prompts_163: -460591926
+      Gamepad Prompts_164: 146095506
+      Gamepad Prompts_165: 925344612
+      Gamepad Prompts_166: 38094860
+      Gamepad Prompts_167: 2121402011
+      Gamepad Prompts_168: 1725315498
+      Gamepad Prompts_169: 1347621984
+      Gamepad Prompts_17: 1378065074
+      Gamepad Prompts_170: 47904606
+      Gamepad Prompts_171: -223664206
+      Gamepad Prompts_173: -71575684
+      Gamepad Prompts_174: -377444771
+      Gamepad Prompts_175: -2011097271
+      Gamepad Prompts_176: -1901792958
+      Gamepad Prompts_177: -511996068
+      Gamepad Prompts_178: -1758685018
+      Gamepad Prompts_179: -403384649
+      Gamepad Prompts_18: -1813010782
+      Gamepad Prompts_180: -1357993009
+      Gamepad Prompts_181: -1051335694
+      Gamepad Prompts_182: 1082408713
+      Gamepad Prompts_183: -1797577416
+      Gamepad Prompts_184: 1012881866
+      Gamepad Prompts_185: 160004983
+      Gamepad Prompts_186: -2099640449
+      Gamepad Prompts_187: -36915919
+      Gamepad Prompts_188: -265571787
+      Gamepad Prompts_189: -1656463816
+      Gamepad Prompts_19: 995619503
+      Gamepad Prompts_190: -1157201095
+      Gamepad Prompts_191: -2009654981
+      Gamepad Prompts_192: -2033690573
+      Gamepad Prompts_193: -882748538
+      Gamepad Prompts_194: -2130462318
+      Gamepad Prompts_195: 890364328
+      Gamepad Prompts_196: 1077507432
+      Gamepad Prompts_197: 891602437
+      Gamepad Prompts_198: 1899725640
+      Gamepad Prompts_199: 1128311125
+      Gamepad Prompts_2: -532457350
+      Gamepad Prompts_20: -627042545
+      Gamepad Prompts_200: -911185537
+      Gamepad Prompts_201: 1968433595
+      Gamepad Prompts_202: 1876771766
+      Gamepad Prompts_203: 59987464
+      Gamepad Prompts_204: 1199356684
+      Gamepad Prompts_205: -1648858916
+      Gamepad Prompts_206: 1821015139
+      Gamepad Prompts_207: -539766795
+      Gamepad Prompts_208: 1359957155
+      Gamepad Prompts_209: 734954880
+      Gamepad Prompts_21: -2074426730
+      Gamepad Prompts_210: -1422243936
+      Gamepad Prompts_211: 632697128
+      Gamepad Prompts_212: 1617961176
+      Gamepad Prompts_213: -169283140
+      Gamepad Prompts_214: -931848323
+      Gamepad Prompts_215: -5051923
+      Gamepad Prompts_216: -2020056107
+      Gamepad Prompts_217: 2142044426
+      Gamepad Prompts_218: 1220629144
+      Gamepad Prompts_219: 1680585791
+      Gamepad Prompts_22: 807997937
+      Gamepad Prompts_220: 63714961
+      Gamepad Prompts_224: -1243271784
+      Gamepad Prompts_225: -692688304
+      Gamepad Prompts_226: 549215890
+      Gamepad Prompts_227: -75877265
+      Gamepad Prompts_228: -1130211021
+      Gamepad Prompts_229: -507040143
+      Gamepad Prompts_23: -180057886
+      Gamepad Prompts_230: 218533896
+      Gamepad Prompts_231: 1387530800
+      Gamepad Prompts_232: -1607591760
+      Gamepad Prompts_233: 120502041
+      Gamepad Prompts_234: 557839923
+      Gamepad Prompts_235: -1741377266
+      Gamepad Prompts_236: -295068183
+      Gamepad Prompts_237: -2086478349
+      Gamepad Prompts_238: -1492163687
+      Gamepad Prompts_24: -925421465
+      Gamepad Prompts_242: -22870251
+      Gamepad Prompts_243: -1652186446
+      Gamepad Prompts_244: 304081074
+      Gamepad Prompts_245: -34506380
+      Gamepad Prompts_246: 1471374320
+      Gamepad Prompts_247: -386422190
+      Gamepad Prompts_248: 1517088573
+      Gamepad Prompts_249: -1559803151
+      Gamepad Prompts_25: -897410904
+      Gamepad Prompts_250: -1026029119
+      Gamepad Prompts_251: -1858388120
+      Gamepad Prompts_252: 2102610019
+      Gamepad Prompts_253: 1266604224
+      Gamepad Prompts_254: 1511637854
+      Gamepad Prompts_258: 560534414
+      Gamepad Prompts_259: -1351570928
+      Gamepad Prompts_26: 301913940
+      Gamepad Prompts_260: 1052742226
+      Gamepad Prompts_261: -1162906680
+      Gamepad Prompts_262: -1586178020
+      Gamepad Prompts_263: 1760589616
+      Gamepad Prompts_264: -536847251
+      Gamepad Prompts_265: 633045137
+      Gamepad Prompts_266: 329898376
+      Gamepad Prompts_267: -1991332314
+      Gamepad Prompts_268: 949551929
+      Gamepad Prompts_269: -1747790231
+      Gamepad Prompts_27: 2052093376
+      Gamepad Prompts_270: -1108297840
+      Gamepad Prompts_271: -394885642
+      Gamepad Prompts_272: -1006353688
+      Gamepad Prompts_273: 549790702
+      Gamepad Prompts_274: 1175648553
+      Gamepad Prompts_275: 399244064
+      Gamepad Prompts_276: 563250053
+      Gamepad Prompts_277: -1375407671
+      Gamepad Prompts_278: 1904633124
+      Gamepad Prompts_279: 1352346153
+      Gamepad Prompts_28: 1150715524
+      Gamepad Prompts_280: 1285389787
+      Gamepad Prompts_281: 500401192
+      Gamepad Prompts_282: -1033078239
+      Gamepad Prompts_283: -2024896891
+      Gamepad Prompts_284: 1266151359
+      Gamepad Prompts_285: -1005135136
+      Gamepad Prompts_286: 1962483808
+      Gamepad Prompts_287: 246336706
+      Gamepad Prompts_288: 1894705593
+      Gamepad Prompts_289: -560961599
+      Gamepad Prompts_29: -2114527155
+      Gamepad Prompts_290: 276110255
+      Gamepad Prompts_3: -506360375
+      Gamepad Prompts_30: 301490850
+      Gamepad Prompts_31: 1669619989
+      Gamepad Prompts_32: 1934744462
+      Gamepad Prompts_33: 351030811
+      Gamepad Prompts_34: 219395505
+      Gamepad Prompts_35: 1132119850
+      Gamepad Prompts_36: -665646881
+      Gamepad Prompts_39: 1136370624
+      Gamepad Prompts_4: -160682757
+      Gamepad Prompts_40: 1116458718
+      Gamepad Prompts_41: 1008030656
+      Gamepad Prompts_42: -1600511078
+      Gamepad Prompts_43: -1465612903
+      Gamepad Prompts_46: 1831106754
+      Gamepad Prompts_47: -783770495
+      Gamepad Prompts_48: 271194656
+      Gamepad Prompts_49: 1579197614
+      Gamepad Prompts_5: 1422987719
+      Gamepad Prompts_50: 224155571
+      Gamepad Prompts_51: 617157132
+      Gamepad Prompts_52: -1817652540
+      Gamepad Prompts_53: 1612955124
+      Gamepad Prompts_54: 1336574505
+      Gamepad Prompts_55: -901124209
+      Gamepad Prompts_56: 1304142417
+      Gamepad Prompts_57: 322073957
+      Gamepad Prompts_58: -74846998
+      Gamepad Prompts_59: 702169893
+      Gamepad Prompts_6: -384083082
+      Gamepad Prompts_60: 1907152584
+      Gamepad Prompts_61: -2097634964
+      Gamepad Prompts_62: -1053442069
+      Gamepad Prompts_63: -731276484
+      Gamepad Prompts_64: 35462299
+      Gamepad Prompts_65: -575540223
+      Gamepad Prompts_66: -1043075867
+      Gamepad Prompts_67: 765963280
+      Gamepad Prompts_68: -1023588886
+      Gamepad Prompts_69: 1785612645
+      Gamepad Prompts_7: 2051105733
+      Gamepad Prompts_70: -1929851990
+      Gamepad Prompts_71: 679199772
+      Gamepad Prompts_72: 1597789937
+      Gamepad Prompts_73: -1902641954
+      Gamepad Prompts_74: 52521564
+      Gamepad Prompts_75: 1618151851
+      Gamepad Prompts_76: -1284257200
+      Gamepad Prompts_77: -2048988637
+      Gamepad Prompts_78: -495328434
+      Gamepad Prompts_79: -1442667781
+      Gamepad Prompts_8: -1718253284
+      Gamepad Prompts_80: -1996749301
+      Gamepad Prompts_81: 1271940278
+      Gamepad Prompts_82: 2030570665
+      Gamepad Prompts_83: 614725819
+      Gamepad Prompts_84: 1529477747
+      Gamepad Prompts_85: -442204378
+      Gamepad Prompts_86: 1126044684
+      Gamepad Prompts_87: 1797509446
+      Gamepad Prompts_88: 2035524008
+      Gamepad Prompts_89: 2003449300
+      Gamepad Prompts_9: -1260495982
+      Gamepad Prompts_90: 576326482
+      Gamepad Prompts_91: 1926328758
+      Gamepad Prompts_92: -136248163
+      Gamepad Prompts_93: 2115811967
+      Gamepad Prompts_94: -1420716623
+      Gamepad Prompts_95: 648851254
+      Gamepad Prompts_96: -251824079
+      Gamepad Prompts_97: -1195973997
+      Gamepad Prompts_98: -1064071193
+      Gamepad Prompts_99: 1907529982
+      Generic_up: 183062924
+      Joystick_L: -2116225675
+      Joystick_LL: 1503504952
+      Joystick_LR: 203927556
+      Joystick_M: 127462294
+      Joystick_ML: -71446603
+      Joystick_MR: 596878503
+      Joystick_U: 1936314781
+      Joystick_UL: 772190139
+      Joystick_UR: -1255100105
+      PS4_x_down: 1787152806
+      PS4_x_up: 2033917540
+      XBox_a_down_green: -970222540
+      XBox_a_down_grey: -825970276
+      XBox_a_up_green: 1279188938
+      XBox_a_up_grey: 2015542767
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

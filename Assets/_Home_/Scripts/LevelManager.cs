@@ -22,6 +22,7 @@ public class LevelManager : Singleton<LevelManager>
         get => failCounter.stolenItems;
         set
         {
+            CheckLoseCondition();
             failCounter.stolenItems = value;
         }
     }
@@ -30,6 +31,7 @@ public class LevelManager : Singleton<LevelManager>
         get => failCounter.unsatisfiedClients;
         set
         {
+            CheckLoseCondition();
             failCounter.unsatisfiedClients = value;
         }
     }
@@ -38,6 +40,7 @@ public class LevelManager : Singleton<LevelManager>
         get => failCounter.trashPoints;
         set
         {
+            CheckLoseCondition();
             failCounter.trashPoints = value;
         }
     }
@@ -105,6 +108,7 @@ public class LevelManager : Singleton<LevelManager>
         clientsPerLevel = maxClientsInStore;
         List<bool> initialClientsThiefList = Enumerable.Repeat(false, maxClientsInStore).ToList();
         initialClientsThiefList[Random.Range(0, initialClientsThiefList.Count)] = true;
+        await UniTask.Delay(5000);
         for (int i = 0; i < maxClientsInStore; i++)
         {
             SpawnSpecificClient(initialClientsThiefList[i]);
@@ -145,4 +149,11 @@ public class LevelManager : Singleton<LevelManager>
         newClient.isThief = isThief;
     }
 
+    private void CheckLoseCondition()
+    {
+        if (trashPoints + unsatisfiedClients + stolenItems + Mathf.Epsilon >= 9.975f)
+        {
+            SceneController.Instance.GoToMainMenu();
+        }
+    }
 }

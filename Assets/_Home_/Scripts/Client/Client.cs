@@ -17,6 +17,7 @@ public class Client : StateMachine<ClientState>
     public Trash trashPrefab;
     public UnityEvent onClientExit = new UnityEvent();
     public UnityEvent onThiefExitWithItems = new UnityEvent();
+    public UnityEvent onClientUnsatisfied = new UnityEvent();
     public UnityEvent onSpawn = new UnityEvent();
     public bool seenStealing
     {

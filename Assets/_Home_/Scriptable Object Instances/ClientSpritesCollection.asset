@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: ClientSpritesCollection
   m_EditorClassIdentifier: 
   currentIndex: 0
+  dontRepeatLastNIndices: 10
   libraries:
   - {fileID: 7108339969198208228, guid: bd2b1c63cdc16c54d88ce60e81f83710, type: 3}
   - {fileID: 7108339969198208228, guid: b50c251cc2832384f8a2980a7a37296d, type: 3}
@@ -28,4 +29,3 @@ MonoBehaviour:
   - {fileID: 7108339969198208228, guid: a97a2f76e9e391a4990058555f208029, type: 3}
   - {fileID: 7108339969198208228, guid: 12e0dc9324d52ee4b9f866db2974bf68, type: 3}
   - {fileID: 7108339969198208228, guid: 7bb89e940a6af2e44b1942ee9028e8b5, type: 3}
-  - {fileID: 7108339969198208228, guid: 9392d85015192414a9e4d66266ff90f1, type: 3}

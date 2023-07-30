@@ -65,4 +65,5 @@ public class Trash : MonoBehaviour
     {
         LevelManager.Instance.trashPoints -= accumulatedAnnoyance;
     }
+
 }

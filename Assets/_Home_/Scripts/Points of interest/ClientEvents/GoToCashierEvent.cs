@@ -15,6 +15,7 @@ public class GoToCashierEvent : ClientEvent
         {
             LevelManager.Instance.unsatisfiedClients++;
             client.DropItems();
+            client.onClientUnsatisfied.Invoke();
             return;
         }
         destinationSetter.target = newTarget;
