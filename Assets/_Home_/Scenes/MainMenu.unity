@@ -3194,18 +3194,7 @@ MonoBehaviour:
   _AwakeEvent:
     _PersistentCalls: []
   _StartEvent:
-    _PersistentCalls:
-    - _Target: {fileID: 541545897}
-      _MethodName: Play
-      _PersistentArguments:
-      - _Type: 2
-        _Int: 0
-        _String: SceneIn
-        _X: 0
-        _Y: 0
-        _Z: 0
-        _W: 0
-        _Object: {fileID: 0}
+    _PersistentCalls: []
   _EnableEvent:
     _PersistentCalls: []
   _DisableEvent:
@@ -5653,7 +5642,7 @@ GameObject:
   - component: {fileID: 1345022478}
   - component: {fileID: 1345022477}
   m_Layer: 5
-  m_Name: Tutorial_01
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5729,7 +5718,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 541545895}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: GoToTutorial
+        m_MethodName: GoToCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

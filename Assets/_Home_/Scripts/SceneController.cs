@@ -19,6 +19,13 @@ public class SceneController : Singleton<SceneController>
     }
 
     [Button]
+    public void GoToCredits()
+    {
+        nextScene = "Credits";
+        Animator transitionAnimator = GetComponent<Animator>();
+        transitionAnimator.Play("SceneOutTransition");
+    }
+    [Button]
     public void GoToGame()
     {
         nextScene = "MainScene";
