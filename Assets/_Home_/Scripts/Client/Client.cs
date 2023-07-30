@@ -84,6 +84,8 @@ public class Client : StateMachine<ClientState>
     }
     private EventQueue _eventQueue;
 
+    private int noEventCounter = 0;
+
     private void Start()
     {
         ChangeAppearance();
@@ -96,6 +98,14 @@ public class Client : StateMachine<ClientState>
     private void Update()
     {
         UpdateAnimation();
+        if (Time.frameCount % 15 != 0) return null;
+        if (eventQueue.currentEvent == null && eventQueue.nextEvents.Count == 0)
+        {
+            noEventCounter++;
+            if (noEventCounter >= 3) LeaveStore();
+        }
+        noEventCounter = 0;
+
     }
 
     private void UpdateAnimation()

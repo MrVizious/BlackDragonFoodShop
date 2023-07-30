@@ -25,6 +25,12 @@ public class SceneController : Singleton<SceneController>
         Animator transitionAnimator = GetComponent<Animator>();
         transitionAnimator.Play("SceneOutTransition");
     }
+    public void GoToTutorial()
+    {
+        nextScene = "Tutorial";
+        Animator transitionAnimator = GetComponent<Animator>();
+        transitionAnimator.Play("SceneOutTransition");
+    }
 
     public void GoToNextScene()
     {
