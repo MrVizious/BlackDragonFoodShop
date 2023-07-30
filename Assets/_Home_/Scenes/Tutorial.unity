@@ -6208,10 +6208,12 @@ MonoBehaviour:
     your clients happy by restocking the shelves and ringing them up quickly.
 
 
-    If
-    you disappoint clients, get robbed, and have a lot of trash, you will lose. Trash
-    will slowly raise the failing bar, but clients and thieves will bake it go up
-    instantly. Don''t let it fill up!'
+    Your
+    failing bar fills up when clients leave angry, you get robbed, or trash piles
+    up. Don''t let it fill!
+
+
+    Try to get the most money before failing!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bef604ade8ff8c9449df294d92dae846, type: 2}
   m_sharedMaterial: {fileID: -2770639117938684069, guid: bef604ade8ff8c9449df294d92dae846, type: 2}
@@ -6238,7 +6240,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.1
+  m_fontSize: 48.25
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
