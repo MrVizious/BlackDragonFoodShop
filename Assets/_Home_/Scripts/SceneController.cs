@@ -4,12 +4,20 @@ using UnityEngine;
 using DesignPatterns;
 using UnityEngine.SceneManagement;
 using Sirenix.OdinInspector;
+using Eflatun.SceneReference;
 
 public class SceneController : Singleton<SceneController>
 {
 
+    public SceneReference sceneReference;
     private string nextScene;
 
+    [Button]
+    public void LoadSelectedScene()
+    {
+        Debug.Log(sceneReference.BuildIndex);
+        SceneManager.LoadScene(sceneReference.BuildIndex);
+    }
     [Button]
     public void GoToEndScene()
     {

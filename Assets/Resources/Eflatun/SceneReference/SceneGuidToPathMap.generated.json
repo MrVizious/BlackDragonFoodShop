@@ -1,0 +1,18 @@
+{
+  "4c6d92427a49f6f4ebb04dd11c55a96d": "Assets/_Home_/Scenes/Credits.unity",
+  "c75476cd2fa015b45bf06f57aa4ed3aa": "Assets/_Home_/Scenes/EndScene.unity",
+  "49be99c783ab67b4592e56d6ecd3b2c9": "Assets/_Home_/Scenes/MainMenu.unity",
+  "42c1ccfbbfab3f54d8ff53332ee41e72": "Assets/_Home_/Scenes/MainScene.unity",
+  "42d44dd4b50212346bb505a99dcd6d44": "Assets/_Home_/Scenes/Tutorial.unity",
+  "a74b1b5d357902346825fdfd125ea399": "Assets/Feel/MMTools/Tools/MMSaveLoad/MMSaveLoadTestScene.unity",
+  "888394d52616e5e42b3b54c3f2bbd3eb": "Assets/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/LoadingScreen.unity",
+  "d89b77a7a68c1844280c6ff2e49f95b8": "Assets/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreen.unity",
+  "dedb2bed56a01c241be42c5c5b5748ca": "Assets/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreenBigText.unity",
+  "8101c376367d6e44f84e602722e5ac10": "Assets/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreenFastFade.unity",
+  "945e5b97212e8e74ebcd35bddde3970c": "Assets/Feel/MMTools/Tools/MMSceneLoading/LoadingScreens/MMAdditiveLoadingScreenSimple.unity",
+  "2cda990e2423bbf4892e6590ba056729": "Assets/Settings/Scenes/URP2DSceneTemplate.unity",
+  "12b11b0dd7a1d28499151967d0625997": "Assets/Unity-Utils/Assets/Plugins/DebugDrawingExtension/Example/Example.unity",
+  "ccda46d3bdb57cb40a5b8e8c03f58d4c": "Assets/Unity-Utils/Assets/Utilities/Audio Manager/Examples/Scenes/ExampleScene.unity",
+  "e026d555eae824f65922633f37a14385": "Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Basic.unity",
+  "5cae0d87369a2405eaa962b8d920b947": "Packages/com.unity.render-pipelines.universal/Editor/SceneTemplates/Standard.unity"
+}
