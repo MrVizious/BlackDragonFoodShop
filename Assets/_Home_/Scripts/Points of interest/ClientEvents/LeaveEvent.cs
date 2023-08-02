@@ -18,7 +18,7 @@ public class LeaveEvent : ClientEvent
         Transform newTarget = GameObject.Find("Door").transform;
         destinationSetter.target = newTarget;
         await UniTask.Delay(200);
-        await UniTask.WaitUntil(HasArrivedToDestination).AttachExternalCancellation(this.GetCancellationTokenOnDestroy());
+        await UniTask.WaitUntil(HasArrivedToDestination);
         await UniTask.Delay(500);
         End();
     }
@@ -29,7 +29,7 @@ public class LeaveEvent : ClientEvent
         {
             LevelManager.Instance.stolenItems += client.currentNumberOfItems;
         }
-        UtilityMethods.UniTaskMethods.DelayedFunction(() => LevelManager.Instance.SpawnRandomClient(), 1f).AttachExternalCancellation(this.GetCancellationTokenOnDestroy()).Forget();
+        UtilityMethods.UniTaskMethods.DelayedFunction(() => LevelManager.Instance.SpawnRandomClient(), 1f).Forget();
         Destroy(client.gameObject);
         base.End();
     }

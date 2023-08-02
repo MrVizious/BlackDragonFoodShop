@@ -84,6 +84,7 @@ public class Client : StateMachine<ClientState>
     }
     private EventQueue _eventQueue;
 
+    [SerializeField]
     private int noEventCounter = 0;
 
     private void Start()
@@ -101,8 +102,14 @@ public class Client : StateMachine<ClientState>
         if (Time.frameCount % 15 != 0) return;
         if (eventQueue.currentEvent == null && eventQueue.nextEvents.Count == 0)
         {
+            Debug.Log("No event");
             noEventCounter++;
-            if (noEventCounter >= 3) LeaveStore();
+            if (noEventCounter >= 3)
+            {
+                if (isThief || currentNumberOfItems <= 0) LeaveStore();
+                else if (!isThief && currentNumberOfItems > 0) GoToCashier();
+            }
+            return;
         }
         noEventCounter = 0;
 
